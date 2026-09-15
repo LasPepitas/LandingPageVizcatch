@@ -1,0 +1,34 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className = "" } = Astro.props;
+---
+
+<div class={`flex flex-wrap items-center gap-2 ${className}`}>
+  <!-- Yape / Plin Badge -->
+  <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#18191E] border border-[#2A2B32] text-xs font-medium text-[#FFFFFF]">
+    <span class="w-1.5 h-1.5 bg-[#22C55E] rounded-full"></span>
+    <span class="font-bold">Yape / Plin</span>
+    <span class="text-[#A1A1AA] text-[11px]">QR Directo</span>
+  </div>
+
+  <!-- Niubiz Badge -->
+  <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#18191E] border border-[#2A2B32] text-xs font-medium text-[#FFFFFF]">
+    <span class="font-bold">Niubiz</span>
+    <span class="text-[#A1A1AA] text-[11px]">Tarjetas</span>
+  </div>
+
+  <!-- Culqi Badge -->
+  <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#18191E] border border-[#2A2B32] text-xs font-medium text-[#FFFFFF]">
+    <span class="font-bold">Culqi</span>
+    <span class="text-[#A1A1AA] text-[11px]">Online</span>
+  </div>
+
+  <!-- SUNAT Facturación Badge -->
+  <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-[#18191E] border border-[#2A2B32] text-xs font-medium text-[#FFFFFF]">
+    <span class="w-1.5 h-1.5 bg-[#FF1E38] rounded-full"></span>
+    <span class="font-bold">SUNAT XML</span>
+    <span class="text-[#A1A1AA] text-[11px]">Facturación</span>
+  </div>
+</div>

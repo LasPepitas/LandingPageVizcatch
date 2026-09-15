@@ -1,0 +1,58 @@
+---
+import Container from '../common/Container.astro';
+import SectionHeading from '../common/SectionHeading.astro';
+
+const steps = [
+  {
+    phase: '1. Diagnóstico',
+    title: 'Levantamiento y Arquitectura',
+    desc: 'Revisamos tus flujos comerciales, integraciones necesarias (SUNAT, pasarelas) y bases de datos para estructurar una especificación técnica clara antes de escribir código.'
+  },
+  {
+    phase: '2. Construcción',
+    title: 'Sprints Semanales con Demos',
+    desc: 'Desarrollamos en entregas incrementales. Cada semana tenés acceso a un entorno de pruebas privado donde podés validar el avance real del software.'
+  },
+  {
+    phase: '3. Validación',
+    title: 'Control de Calidad y Carga',
+    desc: 'Ejecutamos pruebas de estrés para simular alta concurrencia, verificamos el flujo de cobros y aseguramos tiempos de respuesta menores a un segundo en móviles.'
+  },
+  {
+    phase: '4. Entrega',
+    title: 'Despliegue y Traspaso Total',
+    desc: 'Lanzamos a producción en tu infraestructura Cloud, transferimos el repositorio de Git a tu propiedad y capacitamos a tu equipo operativo.'
+  }
+];
+---
+
+<section class="py-20 lg:py-28 bg-[#080808] border-b border-[#23242A]">
+  <Container>
+    <div class="space-y-12 max-w-5xl mx-auto">
+      <SectionHeading 
+        tag="Metodología"
+        title="Cómo trabajamos en cada proyecto"
+        subtitle="Cronogramas claros, comunicación técnica directa y entregables funcionales cada semana."
+      />
+
+      <!-- 4 Clean Phase Cards with Hairline Borders -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {steps.map((item) => (
+          <div class="p-6 sm:p-8 rounded-xl bg-[#101114] border border-[#23242A] hover:border-[#3F3F46] transition-colors flex flex-col justify-between space-y-4">
+            <div class="space-y-3">
+              <span class="text-xs font-bold text-[#FF1E38] uppercase tracking-wider">
+                {item.phase}
+              </span>
+              <h3 class="text-xl font-display text-[#FFFFFF]">
+                {item.title}
+              </h3>
+              <p class="text-xs text-[#A1A1AA] leading-relaxed font-normal">
+                {item.desc}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </Container>
+</section>

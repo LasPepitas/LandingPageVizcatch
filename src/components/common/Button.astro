@@ -1,0 +1,51 @@
+---
+interface Props {
+  variant?: 'primary' | 'secondary' | 'outline' | 'whatsapp' | 'ghost';
+  size?: 'sm' | 'md' | 'lg';
+  href?: string;
+  target?: string;
+  rel?: string;
+  class?: string;
+  type?: 'button' | 'submit' | 'reset';
+  id?: string;
+}
+
+const {
+  variant = 'primary',
+  size = 'md',
+  href,
+  target,
+  rel,
+  class: className = '',
+  type = 'button',
+  id
+} = Astro.props;
+
+const baseStyles = "inline-flex items-center justify-center font-semibold rounded-md transition-all duration-150 cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed text-center";
+
+const sizeStyles = {
+  sm: "px-3.5 py-1.5 text-xs gap-1.5",
+  md: "px-5 py-2.5 text-sm font-semibold gap-2",
+  lg: "px-6 py-3.5 text-base font-semibold gap-2.5"
+};
+
+const variantStyles = {
+  primary: "bg-[#FF1E38] hover:bg-[#E0132C] text-[#FFFFFF] border border-[#FF1E38] focus:ring-[#FF1E38]",
+  secondary: "bg-[#FFFFFF] hover:bg-[#E4E4E7] text-[#080808] border border-[#FFFFFF] focus:ring-[#FFFFFF]",
+  outline: "bg-transparent hover:bg-[#18191E] text-[#FFFFFF] border border-[#27272A] hover:border-[#3F3F46] focus:ring-[#3F3F46]",
+  whatsapp: "bg-[#10B981] hover:bg-[#059669] text-[#FFFFFF] border border-[#10B981] focus:ring-[#10B981]",
+  ghost: "bg-transparent hover:bg-[#18191E] text-[#A1A1AA] hover:text-[#FFFFFF]"
+};
+
+const finalClasses = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`;
+---
+
+{href ? (
+  <a href={href} class={finalClasses} target={target} rel={rel} id={id}>
+    <slot />
+  </a>
+) : (
+  <button type={type} class={finalClasses} id={id}>
+    <slot />
+  </button>
+)}

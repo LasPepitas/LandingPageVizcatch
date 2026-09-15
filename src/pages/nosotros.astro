@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '../components/common/Container.astro';
+import SectionHeading from '../components/common/SectionHeading.astro';
+import PeruFlag from '../components/icons/PeruFlag.astro';
+import Team from '../components/sections/Team.astro';
+import CtaBanner from '../components/sections/CtaBanner.astro';
+
+const values = [
+  {
+    index: '01',
+    title: 'Ingeniería Rigurosa sobre Inmediatez Vacía',
+    desc: 'No creemos en "soluciones mágicas" enlatadas ni en plugins que prometen hacer todo con un click pero destruyen la seguridad y el rendimiento. Diseñamos arquitectura de software profesional con pruebas de calidad, tipado estricto y código mantenible a 10 años.'
+  },
+  {
+    index: '02',
+    title: '100% Soberanía y Propiedad para el Cliente',
+    desc: 'Todo el código fuente, repositorios de Git, accesos a servidores y credenciales son de tu empresa desde el día uno. No cobramos tarifas de rescate ni te atamos a contratos cautivos.'
+  },
+  {
+    index: '03',
+    title: 'Enfoque Obsesivo en Retorno de Inversión',
+    desc: 'El software debe hacer ganar dinero a tu empresa o reducir costos operativos tangibles. Si una funcionalidad no aporta valor medible al negocio, te lo decimos con honestidad técnica antes de cobrarte por ella.'
+  },
+  {
+    index: '04',
+    title: 'Presencia y Soporte Local en Perú',
+    desc: 'Conocemos a la perfección los desafíos del mercado peruano: la integración con SUNAT, las pasarelas locales (Niubiz, Culqi, Yape, Plin), los picos de demanda y la necesidad de atención rápida en nuestro huso horario.'
+  }
+];
+---
+
+<BaseLayout
+  title="Nosotros | Firma de Ingeniería de Software en Perú | Vizcatch"
+  description="Conocé la filosofía, estándares técnicos y equipo detrás de Vizcatch. Software a medida en Perú con bases sólidas de ingeniería."
+>
+  <!-- Header -->
+  <section class="py-24 lg:py-32 bg-[#080808] border-b border-[#23242A]">
+    <Container class="max-w-4xl mx-auto text-left space-y-6">
+      <span class="inline-flex items-center gap-2 px-3 py-1 rounded text-[11px] font-bold uppercase tracking-[0.18em] bg-[#FF1E38]/10 text-[#FF1E38] border border-[#FF1E38]/20">
+        <PeruFlag class="w-3.5 h-2.5" />
+        <span>FIRMA DE INGENIERÍA DE SOFTWARE EN PERÚ</span>
+      </span>
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold font-display uppercase tracking-tight text-[#FFFFFF] leading-[0.95]">
+        ESTÁNDARES DE INGENIERÍA & FILOSOFÍA
+      </h1>
+      <p class="text-base sm:text-lg text-[#A1A1AA] leading-relaxed max-w-2xl font-normal">
+        Elevamos el estándar tecnológico en Perú construyendo arquitectura limpia, tipado estricto y software duradero que escala sin dependencias de terceros.
+      </p>
+    </Container>
+  </section>
+
+  <!-- Manifesto / Principles Grid -->
+  <section class="py-24 bg-[#080808] border-b border-[#23242A]">
+    <Container class="max-w-4xl mx-auto space-y-16">
+      <SectionHeading 
+        tag="PRINCIPIOS FUNDACIONALES"
+        title="CÓMO CONSTRUIMOS Y ENTREGAMOS SOFTWARE"
+        subtitle="Sin atajos, sin dependencias frágiles y con total soberanía técnica en cada sprint."
+      />
+
+      <div class="space-y-6">
+        {values.map((v) => (
+          <div class="p-8 sm:p-10 rounded-lg bg-[#101114] border border-[#23242A] hover:border-[#383942] transition-colors space-y-3">
+            <div class="text-[11px] font-bold text-[#FF1E38] tracking-[0.18em] uppercase">{v.index}</div>
+            <h2 class="text-xl sm:text-2xl font-bold text-[#FFFFFF] tracking-tight">
+              {v.title}
+            </h2>
+            <p class="text-sm text-[#A1A1AA] leading-relaxed font-normal">
+              {v.desc}
+            </p>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  <Team />
+
+  <CtaBanner />
+</BaseLayout>

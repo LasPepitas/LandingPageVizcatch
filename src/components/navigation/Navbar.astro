@@ -1,0 +1,182 @@
+---
+import Container from '../common/Container.astro';
+import Button from '../common/Button.astro';
+import WhatsApp from '../icons/WhatsApp.astro';
+import ChevronDown from '../icons/ChevronDown.astro';
+import Menu from '../icons/Menu.astro';
+import X from '../icons/X.astro';
+import ArrowRight from '../icons/ArrowRight.astro';
+
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  { name: 'Inicio', href: '/' },
+  { 
+    name: 'Servicios', 
+    href: '/servicios',
+    hasDropdown: true,
+    sublinks: [
+      { name: 'CRMs y Sistemas Internos', href: '/servicios/crms-erp', desc: 'Automatización y control de ventas' },
+      { name: 'E-commerce a Medida', href: '/servicios/ecommerce', desc: 'Niubiz, Culqi, Yape/Plin y SUNAT' },
+      { name: 'Landings de Conversión', href: '/servicios/landings', desc: 'Rendimiento 100/100 para pauta' },
+      { name: 'Software & Cloud a Medida', href: '/servicios/software-medida', desc: 'APIs, bases de datos y arquitectura' },
+    ]
+  },
+  { name: 'Por qué Full Code', href: '/por-que-full-code' },
+  { name: 'Casos de Éxito', href: '/casos-de-exito' },
+  { name: 'Nosotros', href: '/nosotros' },
+  { name: 'Contacto', href: '/contacto' },
+];
+---
+
+<header class="sticky top-0 z-50 w-full border-b border-[#23242A] bg-[#080808]/90 backdrop-blur-xl transition-all">
+  <Container class="flex h-16 sm:h-20 items-center justify-between">
+    <!-- Brand Logo -->
+    <a href="/" class="flex items-center gap-2.5 group">
+      <span class="font-display text-2xl font-bold tracking-wider text-[#FFFFFF] group-hover:text-[#FF1E38] transition-colors">
+        VIZCATCH<span class="text-[#FF1E38]">.</span>
+      </span>
+    </a>
+
+    <!-- Desktop Nav Links -->
+    <nav class="hidden lg:flex items-center gap-6 text-xs uppercase tracking-wider font-semibold">
+      <a 
+        href="/casos-de-exito" 
+        class={`transition-colors ${currentPath === '/casos-de-exito' ? 'text-[#FF1E38]' : 'text-[#A1A1AA] hover:text-[#FFFFFF]'}`}
+      >
+        Casos de Éxito
+      </a>
+
+      <!-- Services dropdown -->
+      <div class="relative group">
+        <a 
+          href="/servicios"
+          class={`transition-colors flex items-center gap-1 ${
+            currentPath.startsWith('/servicios') 
+              ? 'text-[#FF1E38]' 
+              : 'text-[#A1A1AA] hover:text-[#FFFFFF]'
+          }`}
+        >
+          <span>Servicios</span>
+          <ChevronDown class="w-3 h-3 text-[#71717A] group-hover:rotate-180 transition-transform duration-150" />
+        </a>
+
+        <!-- Dropdown Menu -->
+        <div class="absolute left-0 top-full pt-2 w-80 opacity-0 translate-y-1 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-150">
+          <div class="rounded-lg bg-[#121317] border border-[#23242A] p-2 shadow-2xl">
+            {navLinks[1].sublinks?.map((sub) => (
+              <a 
+                href={sub.href}
+                class={`block p-3 rounded-md transition-colors ${
+                  currentPath === sub.href ? 'bg-[#18191F] text-[#FF1E38]' : 'hover:bg-[#18191F]'
+                }`}
+              >
+                <div class="text-xs font-bold text-[#FFFFFF]">{sub.name}</div>
+                <div class="text-[11px] text-[#71717A] mt-0.5">{sub.desc}</div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <a 
+        href="/por-que-full-code" 
+        class={`transition-colors ${currentPath === '/por-que-full-code' ? 'text-[#FF1E38]' : 'text-[#A1A1AA] hover:text-[#FFFFFF]'}`}
+      >
+        Por qué Full Code
+      </a>
+
+      <a 
+        href="/nosotros" 
+        class={`transition-colors ${currentPath === '/nosotros' ? 'text-[#FF1E38]' : 'text-[#A1A1AA] hover:text-[#FFFFFF]'}`}
+      >
+        Nosotros
+      </a>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="hidden sm:flex items-center gap-4">
+      <a href="mailto:contacto@vizcatch.com" class="text-xs text-[#71717A] hover:text-[#A1A1AA] font-medium hidden xl:inline">
+        contacto@vizcatch.com
+      </a>
+      <Button 
+        variant="primary" 
+        size="sm" 
+        href="/contacto"
+      >
+        <span>Cotizar Proyecto</span>
+        <ArrowRight class="w-3.5 h-3.5" />
+      </Button>
+    </div>
+
+    <!-- Mobile Menu Toggle Button -->
+    <button 
+      id="mobile-menu-btn" 
+      type="button" 
+      class="lg:hidden p-2 rounded-md text-[#FFFFFF] hover:bg-[#18191E] focus:outline-none"
+      aria-label="Abrir menú"
+    >
+      <Menu class="w-5 h-5" id="icon-menu-open" />
+      <X class="w-5 h-5 hidden" id="icon-menu-close" />
+    </button>
+  </Container>
+
+  <!-- Mobile Drawer Menu -->
+  <div id="mobile-menu" class="hidden lg:hidden border-t border-[#23242A] bg-[#080808] px-4 py-6 space-y-4">
+    <div class="space-y-1 text-sm font-medium">
+      <a href="/" class="block px-3 py-2 rounded-md text-[#FFFFFF] hover:bg-[#18191E]">Inicio</a>
+      <div class="py-2">
+        <span class="px-3 text-xs uppercase text-[#71717A] font-semibold">Servicios</span>
+        <div class="mt-1 pl-3 space-y-1 border-l border-[#23242A]">
+          <a href="/servicios/crms-erp" class="block py-1.5 text-sm text-[#A1A1AA] hover:text-[#FF1E38]">CRMs y Sistemas Internos</a>
+          <a href="/servicios/ecommerce" class="block py-1.5 text-sm text-[#A1A1AA] hover:text-[#FF1E38]">E-commerce a Medida (Perú)</a>
+          <a href="/servicios/landings" class="block py-1.5 text-sm text-[#A1A1AA] hover:text-[#FF1E38]">Landings de Conversión</a>
+          <a href="/servicios/software-medida" class="block py-1.5 text-sm text-[#A1A1AA] hover:text-[#FF1E38]">Software & Cloud a Medida</a>
+        </div>
+      </div>
+      <a href="/casos-de-exito" class="block px-3 py-2 rounded-md text-[#FFFFFF] hover:bg-[#18191E]">Casos de Éxito</a>
+      <a href="/por-que-full-code" class="block px-3 py-2 rounded-md text-[#FFFFFF] hover:bg-[#18191E]">Por qué Full Code</a>
+      <a href="/nosotros" class="block px-3 py-2 rounded-md text-[#FFFFFF] hover:bg-[#18191E]">Nosotros</a>
+      <a href="/contacto" class="block px-3 py-2 rounded-md text-[#FFFFFF] hover:bg-[#18191E]">Contacto</a>
+    </div>
+
+    <div class="pt-4 border-t border-[#23242A] flex flex-col gap-2.5">
+      <Button variant="primary" size="md" href="/contacto" class="w-full">
+        Cotizar Proyecto Ahora
+      </Button>
+      <Button 
+        variant="whatsapp" 
+        size="md" 
+        href="https://wa.me/51999999999?text=Hola%20Vizcatch,%20quiero%20cotizar%20un%20proyecto%20de%20software"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="w-full"
+      >
+        <WhatsApp class="w-4 h-4" />
+        <span>Chatear por WhatsApp</span>
+      </Button>
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-menu-open');
+  const iconClose = document.getElementById('icon-menu-close');
+
+  if (btn && menu && iconOpen && iconClose) {
+    btn.addEventListener('click', () => {
+      const isHidden = menu.classList.contains('hidden');
+      if (isHidden) {
+        menu.classList.remove('hidden');
+        iconOpen.classList.add('hidden');
+        iconClose.classList.remove('hidden');
+      } else {
+        menu.classList.add('hidden');
+        iconOpen.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+      }
+    });
+  }
+</script>

@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Container from '../../components/common/Container.astro';
+import SectionHeading from '../../components/common/SectionHeading.astro';
+import Button from '../../components/common/Button.astro';
+import WhatsApp from '../../components/icons/WhatsApp.astro';
+import CtaBanner from '../../components/sections/CtaBanner.astro';
+
+const pillars = [
+  { index: '01', title: 'Velocidad de Carga Sub-Segundo (<0.8s)', desc: 'El 53% de los usuarios abandona un sitio móvil si tarda más de 3 segundos en cargar. Nuestras landings cargan instantáneamente en 4G.' },
+  { index: '02', title: 'Copywriting Persuasivo B2B', desc: 'Estructuramos la narrativa de venta para atacar los dolores reales de tu cliente ideal y llevarlo directo a la conversión.' },
+  { index: '03', title: 'Captura Instantánea a WhatsApp & CRM', desc: 'Cada lead completado se envía en milisegundos a tu equipo de ventas por WhatsApp y se registra en tu base de datos.' },
+  { index: '04', title: 'Tracking Preciso sin Pérdida de Datos', desc: 'Configuración avanzada de Conversions API (CAPI) de Meta y Google Ads Enhanced Conversions para optimizar tus campañas.' }
+];
+---
+
+<BaseLayout
+  title="Landings Pages de Alta Conversión en Perú | Vizcatch"
+  description="Desarrollamos landing pages full code de ultra-alta velocidad para maximizar el ROI de tus campañas de Google Ads y Meta en Perú."
+>
+  <!-- Hero Section -->
+  <section class="py-24 lg:py-32 bg-[#080808] border-b border-[#23242A]">
+    <Container class="max-w-4xl mx-auto text-left space-y-6">
+      <span class="inline-block px-3 py-1 rounded text-[11px] font-bold uppercase tracking-[0.18em] bg-[#FF1E38]/10 text-[#FF1E38] border border-[#FF1E38]/20">
+        PERFORMANCE MARKETING & CONVERSIÓN
+      </span>
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold font-display uppercase tracking-tight text-[#FFFFFF] leading-[0.95]">
+        LANDINGS PAGES DE ALTA CONVERSIÓN
+      </h1>
+      <p class="text-base sm:text-lg text-[#A1A1AA] leading-relaxed max-w-2xl font-normal">
+        Velocidad sub-segundo (&lt;0.8s), narrativa de valor B2B y captura directa a WhatsApp y base de datos. Maximizá el retorno de inversión de tu pauta publicitaria.
+      </p>
+
+      <div class="pt-4 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
+        <Button 
+          variant="whatsapp" 
+          size="lg" 
+          href="https://wa.me/51999999999?text=Hola%20Vizcatch,%20quiero%20cotizar%20una%20Landing%20Page%20de%20alta%20conversi%C3%B3n"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <WhatsApp class="w-4 h-4" />
+          <span>Cotizar Landing por WhatsApp</span>
+        </Button>
+        <Button variant="outline" size="lg" href="/contacto">
+          <span>Ver Tiempos de Entrega</span>
+        </Button>
+      </div>
+    </Container>
+  </section>
+
+  <!-- Pillars Grid -->
+  <section class="py-24 bg-[#080808] border-b border-[#23242A]">
+    <Container class="max-w-4xl mx-auto space-y-16">
+      <SectionHeading 
+        tag="INGENIERÍA DE CONVERSIÓN"
+        title="DISEÑADAS PARA CONVERTIR TRÁFICO EN INGRESOS"
+        subtitle="Cada elemento de diseño y cada milisegundo de ejecución están optimizados para reducir la fricción de compra."
+      />
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {pillars.map((item) => (
+          <div class="p-8 rounded-lg bg-[#101114] border border-[#23242A] hover:border-[#383942] transition-colors space-y-3">
+            <div class="text-[11px] font-bold text-[#FF1E38] tracking-[0.18em] uppercase">{item.index}</div>
+            <h3 class="text-lg font-bold text-[#FFFFFF] tracking-tight">{item.title}</h3>
+            <p class="text-xs text-[#A1A1AA] leading-relaxed font-normal">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </Container>
+  </section>
+
+  <CtaBanner />
+</BaseLayout>

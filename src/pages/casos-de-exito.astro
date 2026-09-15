@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Container from '../components/common/Container.astro';
+import CtaBanner from '../components/sections/CtaBanner.astro';
+
+const cases = [
+  {
+    client: 'Distribuidora Mayorista Lima SAC',
+    industry: 'Comercio Mayorista / B2B',
+    problem: 'Tienda en WooCommerce que tardaba 4.8s en cargar y colapsaba con más de 80 compradores concurrentes en campañas promocionales.',
+    solution: 'Desarrollo de e-commerce a medida con Astro SSR, PostgreSQL, checkout en 1 paso con Niubiz/Yape y sincronización automática de stock con su ERP.',
+    results: [
+      'Tiempo de carga reducido de 4.8s a 0.6s (-87%)',
+      '+180% de incremento en la tasa de conversión en móviles',
+      'Cero caídas durante campañas de CyberDays con +2,500 visitas concurrentes',
+      'Facturación electrónica SUNAT 100% automatizada'
+    ],
+    tech: ['Astro', 'TypeScript', 'PostgreSQL', 'Niubiz API', 'SUNAT XML']
+  },
+  {
+    client: 'Grupo Logístico del Sur',
+    industry: 'Transporte & Operaciones',
+    problem: 'Control de cotizaciones y despachos en 20 archivos de Excel independientes, con pérdida constante de prospectos y cobros atrasados.',
+    solution: 'CRM y sistema interno a medida con pipeline de ventas, generación de cotizaciones en PDF en 1 click, seguimiento por WhatsApp y módulo de cobranzas.',
+    results: [
+      '70% de reducción en el tiempo administrativo de elaboración de cotizaciones',
+      'Recuperación de S/ 120,000 en cuentas por cobrar gracias a recordatorios automáticos',
+      'Acceso móvil seguro para 18 ejecutivos de ventas en campo'
+    ],
+    tech: ['React', 'Node.js', 'PostgreSQL', 'WhatsApp Business API', 'Docker']
+  },
+  {
+    client: 'Inmobiliaria & Proyectos San Isidro',
+    industry: 'Bienes Raíces / Inversiones',
+    problem: 'Costo por lead (CPL) excesivamente alto en Google Ads debido a que su landing page de WordPress tenía una tasa de rebote del 68%.',
+    solution: 'Landing page ultra-rápida (100/100 Core Web Vitals) con copywriting persuasivo y derivación inmediata de leads calificados al asesor de turno.',
+    results: [
+      'Disminución del 42% en el costo por lead en Google Ads',
+      'Aumento del 115% en el número de visitas que inician chat por WhatsApp',
+      'Puntuación perfecta 100/100 en Google PageSpeed'
+    ],
+    tech: ['Astro', 'Tailwind CSS', 'Meta CAPI', 'Google Enhanced Conversions']
+  }
+];
+---
+
+<BaseLayout
+  title="Casos de Éxito en Desarrollo de Software en Perú | Vizcatch"
+  description="Conocé cómo empresas peruanas aumentaron su facturación y optimizaron sus operaciones con nuestras soluciones full code de CRMs, E-commerce y Landings."
+>
+  <!-- Header -->
+  <section class="py-24 lg:py-32 bg-[#080808] border-b border-[#23242A]">
+    <Container class="max-w-4xl mx-auto text-left space-y-6">
+      <span class="inline-block px-3 py-1 rounded text-[11px] font-bold uppercase tracking-[0.18em] bg-[#FF1E38]/10 text-[#FF1E38] border border-[#FF1E38]/20">
+        PROYECTOS & CASOS DE ESTUDIO
+      </span>
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold font-display uppercase tracking-tight text-[#FFFFFF] leading-[0.95]">
+        CASOS DE ESTUDIO & RESULTADOS
+      </h1>
+      <p class="text-base sm:text-lg text-[#A1A1AA] leading-relaxed max-w-2xl font-normal">
+        Proyectos de ingeniería de software implementados en producción para empresas que exigen alta disponibilidad, velocidad sub-segundo y soberanía de código.
+      </p>
+    </Container>
+  </section>
+
+  <!-- Cases List -->
+  <section class="py-24 bg-[#080808] border-b border-[#23242A]">
+    <Container class="max-w-5xl mx-auto space-y-10">
+      {cases.map((c) => (
+        <div class="rounded-lg border border-[#23242A] bg-[#101114] p-8 sm:p-10 hover:border-[#383942] transition-colors">
+          <div class="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-[#23242A]">
+            <div>
+              <span class="text-[11px] font-bold uppercase tracking-wider text-[#FF1E38] bg-[#FF1E38]/10 border border-[#FF1E38]/20 px-2.5 py-1 rounded">
+                {c.industry}
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-bold text-[#FFFFFF] tracking-tight mt-3">{c.client}</h2>
+            </div>
+            <div class="flex flex-wrap gap-2 text-xs">
+              {c.tech.map((t) => (
+                <span class="px-3 py-1 rounded bg-[#18191E] text-[#FFFFFF] text-xs border border-[#2A2B32] font-medium">
+                  {t}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-8">
+            <div class="space-y-6">
+              <div>
+                <h3 class="text-[11px] font-bold text-[#FF1E38] uppercase tracking-[0.18em] mb-1.5 font-sans">El Desafío / Problema:</h3>
+                <p class="text-sm text-[#A1A1AA] leading-relaxed font-normal">{c.problem}</p>
+              </div>
+
+              <div>
+                <h3 class="text-[11px] font-bold text-[#FFFFFF] uppercase tracking-[0.18em] mb-1.5 font-sans">Solución de Ingeniería:</h3>
+                <p class="text-sm text-[#FFFFFF] leading-relaxed font-normal">{c.solution}</p>
+              </div>
+            </div>
+
+            <div class="rounded-lg bg-[#18191E] p-6 sm:p-8 border border-[#2A2B32] flex flex-col justify-between space-y-6">
+              <div>
+                <div class="text-[11px] font-bold text-[#22C55E] uppercase tracking-[0.18em] mb-4">
+                  Impacto Operativo Comprobado:
+                </div>
+                <ul class="space-y-2.5">
+                  {c.results.map((r) => (
+                    <li class="flex items-start gap-2.5 text-xs text-[#FFFFFF] font-medium">
+                      <span class="w-1.5 h-1.5 bg-[#FF1E38] rounded-full shrink-0 mt-1.5"></span>
+                      <span>{r}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div class="pt-4 border-t border-[#2A2B32] text-right">
+                <a 
+                  href={`https://wa.me/51999999999?text=${encodeURIComponent(`Hola Vizcatch, quiero un proyecto similar al caso de éxito: ${c.client}`)}`}
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="text-xs font-semibold text-[#FF1E38] hover:underline"
+                >
+                  Consultar caso similar para mi empresa →
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </Container>
+  </section>
+
+  <CtaBanner />
+</BaseLayout>

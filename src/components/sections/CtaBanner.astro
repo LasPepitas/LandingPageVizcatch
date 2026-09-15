@@ -1,0 +1,69 @@
+---
+import Container from '../common/Container.astro';
+import Button from '../common/Button.astro';
+import WhatsApp from '../icons/WhatsApp.astro';
+import ArrowRight from '../icons/ArrowRight.astro';
+---
+
+<section class="py-24 lg:py-36 bg-[#080808] text-[#FFFFFF] border-t border-[#23242A] relative overflow-hidden">
+  <Container>
+    <div class="max-w-4xl mx-auto flex flex-col items-center text-center space-y-8 sm:space-y-10">
+      
+      <!-- Top availability capsule (Centered) -->
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#16171D] border border-[#23242A] text-xs font-semibold text-[#10B981]">
+        <span class="w-2 h-2 bg-[#10B981] rounded-full animate-pulse"></span>
+        <span>DISPONIBILIDAD INMEDIATA PARA PROYECTOS B2B</span>
+      </div>
+
+      <!-- Massive STRV Display Closer Headline (Centered) -->
+      <div class="space-y-2 text-center">
+        <h2 class="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-display text-[#FFFFFF] leading-[0.88] tracking-tight">
+          ¿TENÉS UN PROYECTO?
+        </h2>
+        <div class="flex flex-wrap items-baseline justify-center gap-3">
+          <a 
+            href="https://wa.me/51999999999?text=Hola%20Vizcatch,%20quiero%20conversar%20sobre%20un%20proyecto%20de%20software"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-baseline gap-3 text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-display text-[#FF1E38] hover:text-[#FF4D64] leading-[0.88] tracking-tight transition-colors group"
+          >
+            <span class="border-b-4 sm:border-b-8 border-[#FF1E38] pb-1">→ HABLEMOS</span>
+          </a>
+          <span class="text-sm sm:text-base font-heading text-[#71717A] tracking-normal font-medium">
+            (ESTAMOS LISTOS)
+          </span>
+        </div>
+      </div>
+
+      <!-- Descriptive paragraph (Centered) -->
+      <p class="text-base sm:text-xl text-[#A1A1AA] max-w-2xl mx-auto leading-relaxed font-normal">
+        Conversá directamente con un ingeniero de software en Lima hoy mismo. Evaluamos la arquitectura técnica de tu proyecto y preparamos una propuesta a medida sin costo.
+      </p>
+
+      <!-- Action Buttons (Centered) -->
+      <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+        <Button 
+          variant="whatsapp" 
+          size="lg" 
+          href="https://wa.me/51999999999?text=Hola%20Vizcatch,%20quiero%20conversar%20sobre%20un%20proyecto%20de%20software%20para%20mi%20empresa"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full sm:w-auto justify-center"
+        >
+          <WhatsApp class="w-5 h-5" />
+          <span>Escribir por WhatsApp (+51)</span>
+        </Button>
+
+        <Button 
+          variant="secondary" 
+          size="lg" 
+          href="/contacto"
+          class="w-full sm:w-auto justify-center"
+        >
+          <span>Ir al Formulario de Contacto</span>
+          <ArrowRight class="w-4 h-4" />
+        </Button>
+      </div>
+    </div>
+  </Container>
+</section>

@@ -1,11 +1,27 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/sections/Hero.astro';
+import ServicesGrid from '../components/sections/ServicesGrid.astro';
+import Guarantees from '../components/sections/Guarantees.astro';
+import TechStack from '../components/sections/TechStack.astro';
+import Process from '../components/sections/Process.astro';
+import Testimonials from '../components/sections/Testimonials.astro';
+import Faq from '../components/sections/Faq.astro';
+import ContactForm from '../components/sections/ContactForm.astro';
+import CtaBanner from '../components/sections/CtaBanner.astro';
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout 
+  title="Vizcatch — Ingeniería de Software a Medida | Perú"
+  description="Firma de ingeniería de software a medida en Perú. Desarrollamos CRMs, E-commerce de alto tráfico, Landings de alta conversión y plataformas full code con 100% propiedad del cliente."
+>
+  <Hero />
+  <ServicesGrid />
+  <Guarantees />
+  <TechStack />
+  <Process />
+  <Testimonials />
+  <Faq />
+  <ContactForm />
+  <CtaBanner />
+</BaseLayout>

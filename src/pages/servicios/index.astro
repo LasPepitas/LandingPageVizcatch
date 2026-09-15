@@ -1,0 +1,104 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Container from '../../components/common/Container.astro';
+import Button from '../../components/common/Button.astro';
+import ArrowRight from '../../components/icons/ArrowRight.astro';
+import WhatsApp from '../../components/icons/WhatsApp.astro';
+import CtaBanner from '../../components/sections/CtaBanner.astro';
+
+const services = [
+  {
+    title: 'CRMs y Sistemas de Gestión Comercial Interna',
+    slug: '/servicios/crms-erp',
+    badge: 'Automatización Operativa',
+    desc: 'Centralizá prospectos, cotizaciones y flujos comerciales en un software a medida que se adapta exactamente al proceso de tu empresa, sin pagar licencias mensuales en dólares por usuario.',
+    highlights: 'Módulos: Embudo de ventas, integración con WhatsApp Business API, emisión de boletas/facturas SUNAT y dashboards con exportación contable.'
+  },
+  {
+    title: 'E-commerce de Alto Tráfico a Medida (Perú)',
+    slug: '/servicios/ecommerce',
+    badge: 'Comercio Electrónico',
+    desc: 'Tiendas online con checkout en un solo paso, integración nativa con pasarelas peruanas (Niubiz, Culqi, Yape, Plin) y capacidad para soportar miles de compradores simultáneos en CyberDays sin degradación.',
+    highlights: 'Módulos: Catálogo ultrarrápido, cobro por QR Yape/Plin, sincronización de stock en tiempo real y facturación electrónica automatizada.'
+  },
+  {
+    title: 'Landings Pages de Alta Conversión',
+    slug: '/servicios/landings',
+    badge: 'Performance Marketing',
+    desc: 'Páginas de captura optimizadas para campañas publicitarias en Google Ads y Meta Ads. Tiempos de carga instantáneos en 4G que reducen el costo por lead y maximizan tu presupuesto de pauta.',
+    highlights: 'Módulos: Carga en menos de 0.8s, captura directa a WhatsApp y base de datos, arquitectura persuasiva y tracking avanzado con Meta CAPI.'
+  },
+  {
+    title: 'Software Cloud, APIs REST & Modernización',
+    slug: '/servicios/software-medida',
+    badge: 'Ingeniería a Medida',
+    desc: 'Diseño de arquitecturas escalables en la nube (AWS/Cloudflare), microservicios, APIs REST y GraphQL, y rescate o modernización de sistemas legados que frenan tu operación.',
+    highlights: 'Módulos: Código tipado en TypeScript/Go, bases de datos PostgreSQL optimizadas, documentación OpenAPI/Swagger y propiedad 100% del repositorio.'
+  }
+];
+---
+
+<BaseLayout
+  title="Servicios de Ingeniería de Software a Medida | Vizcatch Perú"
+  description="Catálogo de servicios de ingeniería en Perú: CRMs a medida, E-commerce de alto rendimiento, Landings de conversión y software cloud sin dependencias de plantillas."
+>
+  <!-- Services Header -->
+  <section class="py-24 lg:py-32 bg-[#080808] border-b border-[#23242A]">
+    <Container class="max-w-4xl mx-auto text-left space-y-6">
+      <span class="inline-block px-3 py-1 rounded text-[11px] font-bold uppercase tracking-[0.18em] bg-[#FF1E38]/10 text-[#FF1E38] border border-[#FF1E38]/20">
+        CAPACIDADES & SERVICIOS
+      </span>
+      <h1 class="text-4xl sm:text-6xl lg:text-7xl font-bold font-display uppercase tracking-tight text-[#FFFFFF] leading-[0.95]">
+        INGENIERÍA PARA ESCALAR OPERACIONES CRÍTICAS
+      </h1>
+      <p class="text-base sm:text-lg text-[#A1A1AA] leading-relaxed max-w-2xl font-normal">
+        Desarrollamos soluciones full code libres de ataduras, diseñadas para automatizar procesos complejos, reducir costos de infraestructura y soportar alto tráfico.
+      </p>
+    </Container>
+  </section>
+
+  <!-- Detailed Services List -->
+  <section class="py-24 bg-[#080808] border-b border-[#23242A]">
+    <Container class="space-y-8 max-w-5xl mx-auto">
+      {services.map((service) => (
+        <div class="rounded-lg border border-[#23242A] bg-[#101114] p-8 sm:p-10 hover:border-[#383942] transition-colors">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div class="lg:col-span-8 space-y-4">
+              <span class="inline-block px-2.5 py-1 rounded text-[11px] font-bold uppercase tracking-wider text-[#FF1E38] bg-[#FF1E38]/10 border border-[#FF1E38]/20">
+                {service.badge}
+              </span>
+              <h2 class="text-2xl sm:text-3xl font-bold text-[#FFFFFF] tracking-tight">
+                {service.title}
+              </h2>
+              <p class="text-sm text-[#A1A1AA] leading-relaxed font-normal">
+                {service.desc}
+              </p>
+
+              <div class="p-4 rounded-md bg-[#18191E] border border-[#2A2B32] text-xs text-[#E4E4E7]">
+                {service.highlights}
+              </div>
+            </div>
+
+            <div class="lg:col-span-4 flex flex-col justify-between items-start lg:items-end gap-4 lg:border-l lg:border-[#23242A] lg:pl-8 h-full pt-4 lg:pt-0">
+              <Button variant="primary" size="sm" href={service.slug} class="w-full sm:w-auto justify-center">
+                <span>Ver Arquitectura</span>
+                <ArrowRight class="w-3.5 h-3.5" />
+              </Button>
+              <a 
+                href={`https://wa.me/51999999999?text=${encodeURIComponent(`Hola Vizcatch, quiero cotizar el servicio: ${service.title}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 text-xs font-semibold text-[#22C55E] hover:underline"
+              >
+                <WhatsApp class="w-3.5 h-3.5" />
+                <span>Cotizar por WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </Container>
+  </section>
+
+  <CtaBanner />
+</BaseLayout>

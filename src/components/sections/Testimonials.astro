@@ -1,0 +1,80 @@
+---
+import Container from '../common/Container.astro';
+import SectionHeading from '../common/SectionHeading.astro';
+
+const testimonials = [
+  {
+    quote: "Teníamos un e-commerce en WooCommerce que colapsaba en cada campaña de CyberDays y nos costaba miles de soles en ventas perdidas. Vizcatch reescribió la tienda con arquitectura full code: el tiempo de carga bajó de 4.8s a 0.6s y soportamos picos de más de 2,500 compradores simultáneos sin una sola interrupción.",
+    author: "Carlos Morales",
+    role: "Director de Operaciones",
+    company: "Distribuidora Mayorista Lima",
+    tag: "E-COMMERCE ALTO TRÁFICO",
+    metric: "0.6s LCP • +180% Conversión Móvil"
+  },
+  {
+    quote: "Coordinábamos 18 ejecutivos comerciales en hojas de cálculo desordenadas. El CRM a medida que construyó Vizcatch nos permitió automatizar las cotizaciones por WhatsApp y emitir facturas electrónicas SUNAT en 1 click. Redujimos el 70% de la carga administrativa en el primer mes.",
+    author: "Mariana Alarcón",
+    role: "Gerente Comercial",
+    company: "Grupo Logístico del Sur",
+    tag: "CRM & FACTURACIÓN SUNAT",
+    metric: "70% Ahorro Tiempo • S/ 120k Recuperados"
+  },
+  {
+    quote: "Nos cansamos de agencias que vendían plantillas infladas de plugins que se desconfiguraban al mes. Con Vizcatch tenemos el repositorio 100% propio en GitHub, tipado en TypeScript y alojado en AWS por menos de $15 al mes. Es software de nivel corporativo real.",
+    author: "Ing. Jorge Valdivia",
+    role: "Socio Fundador",
+    company: "Inmobiliaria & Proyectos San Isidro",
+    tag: "SOFTWARE CLOUD & LANDING",
+    metric: "100/100 Core Web Vitals • -42% CPL"
+  }
+];
+---
+
+<section class="py-24 lg:py-32 bg-[#080808] border-b border-[#23242A]">
+  <Container>
+    <div class="space-y-16 max-w-5xl mx-auto">
+      <SectionHeading 
+        tag="TESTIMONIOS & RESPALDO"
+        title="LO QUE DICEN QUIENES CONSTRUYERON CON NOSOTROS"
+        subtitle="Directores de operaciones y líderes comerciales en Perú que transformaron la estabilidad y facturación de sus empresas con arquitectura full code."
+      />
+
+      <!-- 3-Column Reviews Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {testimonials.map((t) => (
+          <div class="p-8 rounded-lg bg-[#101114] border border-[#23242A] hover:border-[#383942] transition-colors flex flex-col justify-between space-y-6">
+            <div class="space-y-4">
+              <!-- Star rating & Tag -->
+              <div class="flex items-center justify-between gap-2 pb-3 border-b border-[#23242A]">
+                <div class="flex items-center gap-1 text-[#FF1E38]">
+                  {[1, 2, 3, 4, 5].map(() => (
+                    <span class="text-sm">★</span>
+                  ))}
+                </div>
+                <span class="text-[10px] font-bold text-[#A1A1AA] uppercase tracking-wider bg-[#18191E] px-2 py-0.5 rounded border border-[#2A2B32]">
+                  {t.tag}
+                </span>
+              </div>
+
+              <!-- Quote -->
+              <p class="text-xs sm:text-sm text-[#A1A1AA] leading-relaxed font-normal">
+                "{t.quote}"
+              </p>
+            </div>
+
+            <!-- Author Info -->
+            <div class="pt-4 border-t border-[#23242A] space-y-1">
+              <div class="font-bold text-sm text-[#FFFFFF] tracking-tight">{t.author}</div>
+              <div class="text-xs text-[#A1A1AA]">{t.role}</div>
+              <div class="text-xs text-[#71717A] font-medium">{t.company}</div>
+              <div class="pt-2 text-[11px] font-semibold text-[#22C55E] flex items-center gap-1.5">
+                <span class="w-1.5 h-1.5 bg-[#22C55E] rounded-full"></span>
+                <span>{t.metric}</span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </Container>
+</section>

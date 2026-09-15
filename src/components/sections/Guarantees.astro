@@ -1,0 +1,80 @@
+---
+import Container from '../common/Container.astro';
+import SectionHeading from '../common/SectionHeading.astro';
+import Zap from '../icons/Zap.astro';
+import Code from '../icons/Code.astro';
+import PeruFlag from '../icons/PeruFlag.astro';
+
+const pillars = [
+  {
+    icon: Code,
+    title: '100% Soberanía y Propiedad del Código',
+    desc: 'Tu empresa es dueña absoluta del repositorio Git, la base de datos y las credenciales de Cloud. Cero licencias en dólares por usuario, cero contratos cautivos y cero ataduras a plugins de terceros.',
+    stats: [
+      { label: 'Repositorio del Cliente', val: '100% Código Fuente' },
+      { label: 'Licencias Mensuales', val: 'S/ 0.00 en Plugins' }
+    ]
+  },
+  {
+    icon: PeruFlag,
+    title: 'Ecosistema Perú Integrado de Fábrica',
+    desc: 'Integración nativa vía API directa con pasarelas de pago peruanas (Niubiz, Culqi, QR Yape y Plin) y emisión electrónica de comprobantes SUNAT (boletas y facturas XML/PDF) sin intermediarios lentos.',
+    stats: [
+      { label: 'Facturación Electrónica', val: 'SUNAT XML Directo' },
+      { label: 'Pasarelas Locales', val: 'Niubiz • Culqi • Yape' }
+    ]
+  },
+  {
+    icon: Zap,
+    title: 'Arquitectura Cloud Escalable y Eficiente',
+    desc: 'Construimos con código compilado y bases de datos relacionales indexadas (PostgreSQL). Tu plataforma soporta picos masivos de CyberDays en infraestructura económica ($10 a $20/mes en AWS o Cloudflare).',
+    stats: [
+      { label: 'Tiempo de Carga 4G', val: '< 0.8s Instantáneo' },
+      { label: 'Garantía de Uptime', val: '99.9% Disponibilidad' }
+    ]
+  }
+];
+---
+
+<section class="py-20 lg:py-28 bg-[#080808] border-b border-[#23242A]">
+  <Container>
+    <div class="space-y-12 max-w-5xl mx-auto">
+      <SectionHeading 
+        tag="Por qué Vizcatch"
+        title="Ingeniería sólida para operaciones que no pueden detenerse"
+        subtitle="Construimos activos digitales duraderos con arquitectura full-code, eliminando los riesgos de seguridad y costos ocultos de las plantillas."
+      />
+
+      <!-- 3-Column Hairline Card Grid (Callstack style) -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {pillars.map((p) => (
+          <div class="p-8 rounded-lg bg-[#101114] border border-[#23242A] flex flex-col justify-between space-y-6 hover:border-[#3F3F46] transition-colors">
+            <div class="space-y-4">
+              <div class="w-10 h-10 rounded-md bg-[#18191F] border border-[#27272A] flex items-center justify-center text-[#FF1E38]">
+                <p.icon class="w-5 h-5" />
+              </div>
+
+              <h3 class="text-xl font-display text-[#FFFFFF] leading-snug">
+                {p.title}
+              </h3>
+
+              <p class="text-xs text-[#A1A1AA] leading-relaxed font-normal">
+                {p.desc}
+              </p>
+            </div>
+
+            <!-- Bottom Stats inside Card -->
+            <div class="pt-4 border-t border-[#1E1F24] space-y-2 text-xs">
+              {p.stats.map((s) => (
+                <div class="flex items-center justify-between">
+                  <span class="text-[#71717A]">{s.label}:</span>
+                  <span class="font-semibold text-[#FFFFFF]">{s.val}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </Container>
+</section>

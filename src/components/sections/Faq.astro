@@ -1,0 +1,59 @@
+---
+import Container from '../common/Container.astro';
+import SectionHeading from '../common/SectionHeading.astro';
+import ChevronDown from '../icons/ChevronDown.astro';
+
+const faqs = [
+  {
+    q: '¿Por qué dicen "Full Code" y no usan WordPress o Shopify?',
+    a: 'Porque las plantillas de WordPress y los constructores visuales vienen cargados con decenas de plugins innecesarios que ralentizan la carga (3 a 6 segundos), generan brechas de seguridad constantes y te hacen dependiente de licencias en dólares. Con Full Code (Astro, React, Node.js, Go, PostgreSQL), el código es 100% de tu empresa, carga en menos de 0.8s y nunca se cae por incompatibilidad de plugins.'
+  },
+  {
+    q: '¿El software desarrollado será 100% propiedad de mi empresa?',
+    a: 'Absolutamente sí. Al finalizar el proyecto te transferimos la totalidad del repositorio en GitHub/GitLab, la documentación técnica y el acceso total a la infraestructura Cloud (AWS, Cloudflare, etc.). Cero cláusulas de retención ni costos ocultos de traspaso.'
+  },
+  {
+    q: '¿Cómo se integran los pagos con Yape, Plin, Niubiz y Culqi?',
+    a: 'Desarrollamos integraciones nativas vía API directa y webhooks seguros con Niubiz, Culqi y pasarelas con QR dinámico para Yape y Plin. Cada transacción valida el estado en tiempo real y puede emitir automáticamente la boleta o factura electrónica SUNAT correspondiente.'
+  },
+  {
+    q: '¿Cuánto tiempo toma desarrollar un CRM o E-commerce a medida?',
+    a: 'Trabajamos en sprints ágiles de 1 a 2 semanas con entregas funcionales. Una Landing de alta conversión suele completarse en 5 a 8 días hábiles; un CRM o E-commerce a medida toma entre 2 y 5 semanas dependiendo de la complejidad de los módulos e integraciones.'
+  },
+  {
+    q: '¿Ofrecen soporte y mantenimiento post-lanzamiento?',
+    a: 'Sí. Todos nuestros desarrollos incluyen garantía técnica post-entrega y ofrecemos planes opcionales de mantenimiento preventivo, soporte DevOps y evolución continua de nuevas funcionalidades.'
+  },
+  {
+    q: '¿Emiten factura para empresas en Perú?',
+    a: 'Sí, somos una empresa formalmente constituida en Perú y emitimos Factura Electrónica con RUC para que puedas deducir gastos e IGV.'
+  }
+];
+---
+
+<section class="py-24 lg:py-32 bg-[#080808] border-b border-[#23242A]">
+  <Container>
+    <div class="max-w-3xl mx-auto space-y-12">
+      <SectionHeading 
+        tag="PREGUNTAS FRECUENTES"
+        title="RESPUESTAS TÉCNICAS Y OPERATIVAS"
+        subtitle="Todo lo que necesitás saber sobre cómo trabajamos, transferencias de propiedad y arquitectura antes de iniciar tu proyecto."
+      />
+
+      <!-- Clean Hairline Accordion -->
+      <div class="divide-y divide-[#23242A] border-y border-[#23242A] bg-[#101114] rounded-lg overflow-hidden border">
+        {faqs.map((faq) => (
+          <details class="group p-6 transition-all open:bg-[#15161B]">
+            <summary class="flex cursor-pointer items-center justify-between font-bold text-sm text-[#FFFFFF] list-none focus:outline-none">
+              <span class="pr-4">{faq.q}</span>
+              <ChevronDown class="w-4 h-4 text-[#A1A1AA] shrink-0 group-open:rotate-180 group-open:text-[#FF1E38] transition-transform duration-150" />
+            </summary>
+            <p class="mt-4 pt-4 border-t border-[#23242A] text-xs text-[#A1A1AA] leading-relaxed font-normal">
+              {faq.a}
+            </p>
+          </details>
+        ))}
+      </div>
+    </div>
+  </Container>
+</section>

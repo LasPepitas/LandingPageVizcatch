@@ -1,0 +1,10 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className = "w-5 h-3.5" } = Astro.props;
+---
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" class={`rounded-xs overflow-hidden ${className}`}>
+  <rect width="900" height="600" fill="#D91023"/>
+  <rect width="300" height="600" x="300" fill="#FFFFFF"/>
+</svg>

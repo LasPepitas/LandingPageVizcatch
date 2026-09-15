@@ -1,0 +1,125 @@
+---
+import Container from '../common/Container.astro';
+import Button from '../common/Button.astro';
+import ArrowRight from '../icons/ArrowRight.astro';
+import WhatsApp from '../icons/WhatsApp.astro';
+
+const capabilities = [
+  {
+    title: 'CRMs y Sistemas de Gestión Comercial a Medida',
+    slug: '/servicios/crms-erp',
+    desc: 'Paneles comerciales adaptados 100% al ciclo de venta de tu empresa. Centralización de prospectos, historial de conversaciones de WhatsApp, facturación SUNAT en un click y reportería en tiempo real sin pagar licencias mensuales en dólares por usuario.'
+  },
+  {
+    title: 'E-commerce de Alto Desempeño & Pasarelas Perú',
+    slug: '/servicios/ecommerce',
+    desc: 'Tiendas online construidas con código compilado y bases de datos relacionales indexadas. Soportan miles de compradores simultáneos en CyberDays sin caídas, con checkout rápido y cobros nativos con Niubiz, Culqi, Yape y Plin.'
+  },
+  {
+    title: 'Landings Pages de Ultra-Alta Conversión para Pauta',
+    slug: '/servicios/landings',
+    desc: 'Páginas de captura quirúrgicamente optimizadas para maximizar el retorno de inversión en Google Ads y Meta Ads. Tiempos de carga menores a 0.8s en 4G para reducir el costo por lead (CPL).'
+  },
+  {
+    title: 'Desarrollo de Software Cloud, APIs REST & Modernización',
+    slug: '/servicios/software-medida',
+    desc: 'Arquitectura escalable en la nube (AWS/Cloudflare), microservicios en Node.js o Go, bases de datos PostgreSQL optimizadas y rescate o modernización de sistemas legados obsoletos.'
+  }
+];
+---
+
+<section id="servicios" class="py-20 lg:py-32 bg-[#0A0A0E] border-b border-[#23242A]">
+  <Container>
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start max-w-5xl mx-auto">
+      
+      <!-- Left Column: Big Headline & Statement (Col 1 to 5) -->
+      <div class="lg:col-span-5 space-y-6 lg:sticky lg:top-28">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-[#71717A] font-semibold">
+            Capacidades de Ingeniería
+          </span>
+          <h2 class="text-5xl sm:text-6xl lg:text-7xl font-display text-[#FFFFFF] leading-[0.92] mt-2">
+            NUESTRA <br />
+            <span class="text-[#FF1E38]">EXPERIENCIA</span>
+          </h2>
+        </div>
+
+        <p class="text-sm sm:text-base text-[#A1A1AA] leading-relaxed font-normal">
+          No vendemos plantillas ni soluciones enlatadas. Diseñamos y construimos la infraestructura digital exacta que tu empresa necesita para dominar su sector y operar con estabilidad absoluta.
+        </p>
+
+        <!-- Visual Architecture Card -->
+        <div class="p-6 rounded-xl bg-[#101114] border border-[#23242A] space-y-4">
+          <div class="text-xs font-bold uppercase tracking-wider text-[#FFFFFF] flex items-center justify-between">
+            <span>Estándar Full Code</span>
+            <span class="text-[#10B981] flex items-center gap-1.5">
+              <span class="w-1.5 h-1.5 bg-[#10B981] rounded-full"></span>
+              Producción
+            </span>
+          </div>
+          <div class="space-y-2 text-xs text-[#71717A]">
+            <div class="flex justify-between border-b border-[#1E1F24] pb-1.5">
+              <span>Arquitectura:</span>
+              <span class="text-[#A1A1AA] font-semibold">Microservicios & Edge</span>
+            </div>
+            <div class="flex justify-between border-b border-[#1E1F24] pb-1.5">
+              <span>Base de Datos:</span>
+              <span class="text-[#A1A1AA] font-semibold">PostgreSQL ACID</span>
+            </div>
+            <div class="flex justify-between border-b border-[#1E1F24] pb-1.5">
+              <span>Soberanía:</span>
+              <span class="text-[#A1A1AA] font-semibold">100% Repositorio Cliente</span>
+            </div>
+            <div class="flex justify-between">
+              <span>Cumplimiento:</span>
+              <span class="text-[#A1A1AA] font-semibold">SUNAT XML Directo</span>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <Button variant="primary" size="md" href="/contacto" class="w-full sm:w-auto">
+            <span>Cotizar un Desarrollo</span>
+            <ArrowRight class="w-4 h-4" />
+          </Button>
+        </div>
+      </div>
+
+      <!-- Right Column: Capabilities List with Dashes (Col 6 to 12) -->
+      <div class="lg:col-span-7 space-y-6">
+        {capabilities.map((c) => (
+          <div class="p-8 rounded-xl bg-[#101114] border border-[#23242A] hover:border-[#FF1E38]/40 transition-all space-y-4 group">
+            <h3 class="text-2xl font-display text-[#FFFFFF] group-hover:text-[#FF1E38] transition-colors flex items-center justify-between">
+              <span>{c.title}</span>
+              <ArrowRight class="w-5 h-5 text-[#71717A] group-hover:text-[#FF1E38] group-hover:translate-x-1 transition-all shrink-0" />
+            </h3>
+
+            <p class="text-xs sm:text-sm text-[#A1A1AA] leading-relaxed font-normal">
+              {c.desc}
+            </p>
+
+            <div class="pt-3 border-t border-[#1E1F24] flex items-center justify-between">
+              <a 
+                href={c.slug}
+                class="text-xs font-semibold uppercase tracking-wider text-[#FF1E38] hover:underline inline-flex items-center gap-1"
+              >
+                <span>Ver Detalles Técnicos</span>
+                <ArrowRight class="w-3 h-3" />
+              </a>
+
+              <a 
+                href={`https://wa.me/51999999999?text=${encodeURIComponent(`Hola Vizcatch, quiero cotizar: ${c.title}`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-xs text-[#71717A] hover:text-[#10B981] transition-colors flex items-center gap-1"
+              >
+                <WhatsApp class="w-3.5 h-3.5 text-[#10B981]" />
+                <span>WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </Container>
+</section>

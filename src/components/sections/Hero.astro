@@ -1,0 +1,173 @@
+---
+import Container from '../common/Container.astro';
+import Button from '../common/Button.astro';
+import ArrowRight from '../icons/ArrowRight.astro';
+import WhatsApp from '../icons/WhatsApp.astro';
+import ShieldCheck from '../icons/ShieldCheck.astro';
+import Zap from '../icons/Zap.astro';
+import PeruFlag from '../icons/PeruFlag.astro';
+---
+
+<section class="pt-8 pb-16 lg:pt-10 lg:pb-20 border-b border-[#23242A] bg-[#080808] relative overflow-hidden">
+  <Container>
+    <div class="max-w-5xl mx-auto flex flex-col items-center text-center space-y-6 sm:space-y-7">
+      
+      <!-- Eyebrow Metadata (Callstack style - Centered) -->
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <span class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-[#16171D] border border-[#23242A] text-xs font-semibold text-[#A1A1AA]">
+          <PeruFlag class="w-3.5 h-2.5" />
+          <span>Lima, Perú</span>
+        </span>
+        <span class="text-xs uppercase tracking-widest text-[#71717A] font-medium hidden sm:inline">
+          Full Code Architecture · Cero Plantillas · Soberanía Total
+        </span>
+      </div>
+
+      <!-- Master Display Title (STRV Massive Style - Centered) -->
+      <h1 class="text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-display text-[#FFFFFF] leading-[0.9] tracking-tight">
+        INGENIERÍA DE SOFTWARE <br />
+        <span class="text-[#FF1E38]">A MEDIDA</span>
+      </h1>
+
+      <!-- Executive Manifesto Paragraph (Centered) -->
+      <p class="text-lg sm:text-2xl text-[#A1A1AA] leading-relaxed max-w-3xl mx-auto font-normal">
+        Diseñamos, construimos y escalamos <strong class="text-[#FFFFFF] font-semibold">CRMs, E-commerce de alto tráfico y plataformas empresariales</strong> para compañías que superaron la lentitud, caídas y ataduras de las plantillas genéricas.
+      </p>
+
+      <!-- Action Buttons (Centered) -->
+      <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">
+        <Button 
+          variant="primary" 
+          size="lg" 
+          href="/contacto"
+          class="w-full sm:w-auto justify-center"
+        >
+          <span>Cotizar Proyecto</span>
+          <ArrowRight class="w-4 h-4" />
+        </Button>
+
+        <Button 
+          variant="whatsapp" 
+          size="lg" 
+          href="https://wa.me/51999999999?text=Hola%20Vizcatch,%20quiero%20cotizar%20un%20proyecto%20de%20software%20para%20mi%20empresa"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-full sm:w-auto justify-center"
+        >
+          <WhatsApp class="w-4 h-4" />
+          <span>Hablar por WhatsApp (+51)</span>
+        </Button>
+
+        <Button 
+          variant="outline" 
+          size="lg" 
+          href="#servicios"
+          class="w-full sm:w-auto justify-center"
+        >
+          <span>Nuestros Servicios</span>
+        </Button>
+      </div>
+
+      <!-- Institutional Trust Strip with Hairline Border (Centered) -->
+      <div class="pt-8 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs text-[#71717A] border-t border-[#23242A] w-full max-w-4xl mx-auto">
+        <div class="flex items-center gap-2">
+          <ShieldCheck class="w-4 h-4 text-[#10B981]" />
+          <span class="text-[#A1A1AA]">100% Repositorio Propio del Cliente</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <Zap class="w-4 h-4 text-[#FF1E38]" />
+          <span class="text-[#A1A1AA]">Rendimiento Sub-Segundo en 4G Perú</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 bg-[#FF1E38] rounded-full"></span>
+          <span class="text-[#A1A1AA]">Niubiz • Culqi • Yape/Plin • SUNAT XML</span>
+        </div>
+      </div>
+    </div>
+  </Container>
+
+  <!-- Ecosystem Carousel Marquee Bar -->
+  <div class="mt-16 border-t border-b border-[#23242A] bg-[#0C0D10] py-4 relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+    <div class="flex items-center gap-6 animate-marquee whitespace-nowrap">
+      
+      <!-- Set 1 -->
+      <div class="flex items-center gap-8 text-xs uppercase tracking-widest text-[#A1A1AA] font-bold">
+        <span class="text-[#FF1E38] flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#FF1E38] animate-pulse"></span>
+          Ecosistema Integrado:
+        </span>
+        <span class="text-[#FFFFFF]">SUNAT XML Directo</span>
+        <span class="text-[#FF1E38]">•</span>
+        <span class="text-[#FFFFFF]">Niubiz API</span>
+        <span class="text-[#FF1E38]">•</span>
+        <span class="text-[#FFFFFF]">Culqi Tokenizado</span>
+        <span class="text-[#FF1E38]">•</span>
+        <span class="text-[#FFFFFF]">Yape / Plin QR</span>
+        <span class="text-[#FF1E38]">•</span>
+        <span class="text-[#FFFFFF]">AWS & Cloudflare Edge</span>
+        <span class="text-[#FF1E38]">•</span>
+        <span class="text-[#FFFFFF]">PostgreSQL</span>
+      </div>
+
+      <!-- Set 2 (Duplicate for Seamless Infinite Loop) -->
+      <div class="flex items-center gap-8 text-xs uppercase tracking-widest text-[#A1A1AA] font-bold" aria-hidden="true">
+        <span class="text-[#FF1E38] flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#FF1E38] animate-pulse"></span>
+          Ecosistema Integrado:
+        </span>
+        <span class="text-[#FFFFFF]">SUNAT XML Directo</span>
+        <span class="text-[#FF1E38]">•</span>
+        <span class="text-[#FFFFFF]">Niubiz API</span>
+        <span class="text-[#FF1E38]">•</span>
+        <span class="text-[#FFFFFF]">Culqi Tokenizado</span>
+        <span class="text-[#FF1E38]">•</span>
+        <span class="text-[#FFFFFF]">Yape / Plin QR</span>
+        <span class="text-[#FF1E38]">•</span>
+        <span class="text-[#FFFFFF]">AWS & Cloudflare Edge</span>
+        <span class="text-[#FF1E38]">•</span>
+        <span class="text-[#FFFFFF]">PostgreSQL</span>
+      </div>
+
+      <!-- Set 3 (Duplicate for Ultrawide monitors) -->
+      <div class="flex items-center gap-8 text-xs uppercase tracking-widest text-[#A1A1AA] font-bold" aria-hidden="true">
+        <span class="text-[#FF1E38] flex items-center gap-2">
+          <span class="w-2 h-2 rounded-full bg-[#FF1E38] animate-pulse"></span>
+          Ecosistema Integrado:
+        </span>
+        <span class="text-[#FFFFFF]">SUNAT XML Directo</span>
+        <span class="text-[#FF1E38]">•</span>
+        <span class="text-[#FFFFFF]">Niubiz API</span>
+        <span class="text-[#FF1E38]">•</span>
+        <span class="text-[#FFFFFF]">Culqi Tokenizado</span>
+        <span class="text-[#FF1E38]">•</span>
+        <span class="text-[#FFFFFF]">Yape / Plin QR</span>
+        <span class="text-[#FF1E38]">•</span>
+        <span class="text-[#FFFFFF]">AWS & Cloudflare Edge</span>
+        <span class="text-[#FF1E38]">•</span>
+        <span class="text-[#FFFFFF]">PostgreSQL</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes marquee {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-33.333333%);
+    }
+  }
+
+  .animate-marquee {
+    display: flex;
+    width: max-content;
+    animation: marquee 22s linear infinite;
+  }
+
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+</style>

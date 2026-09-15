@@ -1,0 +1,73 @@
+---
+import Container from '../common/Container.astro';
+import SectionHeading from '../common/SectionHeading.astro';
+import PeruPayments from '../illustrations/PeruPayments.astro';
+
+const techCategories = [
+  { 
+    category: 'Frontend & Renderizado Edge', 
+    desc: 'Carga instantánea sin JavaScript residual en el navegador del usuario.',
+    items: ['Astro Islands', 'React', 'TypeScript', 'Tailwind CSS'] 
+  },
+  { 
+    category: 'Backend & Servicios Centrales', 
+    desc: 'APIs tipadas, seguras y preparadas para alta concurrencia.',
+    items: ['Node.js', 'Go', 'REST APIs', 'GraphQL', 'Docker'] 
+  },
+  { 
+    category: 'Bases de Datos & Almacenamiento', 
+    desc: 'Modelado relacional estricto con transacciones ACID seguras.',
+    items: ['PostgreSQL', 'Redis Caché', 'Drizzle ORM', 'Prisma'] 
+  },
+  { 
+    category: 'Infraestructura Cloud & Despliegue', 
+    desc: 'Alojamiento cloud de bajo costo ($10-$20/mes) con alta disponibilidad.',
+    items: ['AWS', 'Cloudflare Edge', 'GitHub Actions', 'Linux Ubuntu'] 
+  },
+];
+---
+
+<section class="py-24 lg:py-32 bg-[#080808] border-b border-[#23242A]">
+  <Container>
+    <div class="space-y-16 max-w-5xl mx-auto">
+      <SectionHeading 
+        tag="ARQUITECTURA & STACK"
+        title="STACK TECNOLÓGICO DE ALTO RENDIMIENTO"
+        subtitle="Construimos sobre tecnologías abiertas, robustas y tipadas de punta a punta para garantizar soberanía y mantenibilidad sin dependencias frágiles."
+      />
+
+      <!-- Tech categories grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {techCategories.map((tech) => (
+          <div class="p-8 rounded-lg bg-[#101114] border border-[#23242A] hover:border-[#383942] transition-colors space-y-4">
+            <div>
+              <div class="text-[11px] font-bold text-[#FF1E38] tracking-[0.18em] uppercase mb-1.5 font-sans">
+                {tech.category}
+              </div>
+              <p class="text-xs text-[#A1A1AA] leading-relaxed">
+                {tech.desc}
+              </p>
+            </div>
+            
+            <div class="flex flex-wrap gap-2 pt-3 border-t border-[#23242A]">
+              {tech.items.map((item) => (
+                <span class="px-3 py-1 rounded bg-[#18191E] text-[#FFFFFF] text-xs font-medium border border-[#2A2B32]">
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Integrations Banner -->
+      <div class="p-6 rounded-lg bg-[#101114] border border-[#23242A] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+        <div>
+          <div class="text-xs font-bold text-[#FFFFFF] uppercase tracking-wider">Ecosistema e Integraciones Locales</div>
+          <div class="text-xs text-[#A1A1AA] mt-0.5">Conectividad directa certificada para facturación electrónica SUNAT y pasarelas de pago.</div>
+        </div>
+        <PeruPayments />
+      </div>
+    </div>
+  </Container>
+</section>
