@@ -13,7 +13,7 @@ interface Props {
 const {
   title = "Vizcatch Analytics — Ingeniería de Software a Medida | Puno, Perú",
   description = "Firma de ingeniería de software en Puno, Perú. Construimos CRMs, E-commerce de alto tráfico y plataformas a medida con arquitectura full code, cero dependencias de plantillas y 100% propiedad del cliente.",
-  image = "/og-image.png",
+  image = new URL("/og-image.png", Astro.site || "https://vizcatch-analytics.com").href,
   canonicalURL = new URL(
     Astro.url.pathname,
     Astro.site || "https://vizcatch-analytics.com",
