@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vizcatchanalytics.com/sitemap-index.xml
+Sitemap: https://vizcatch-analytics.com/sitemap-index.xml
