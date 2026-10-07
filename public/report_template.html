@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporte - Vizcatch Analytics</title>
+    <!-- Fuentes Recomendadas: Inter para Headers, Roboto para Cuerpo -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Variables de Marca (Extraídas de BRAND_GUIDELINES.md) */
+        :root {
+            --dark-void: #010102;
+            --catch-purple: #7368CF;
+            --neon-accent: #8278D3;
+            --deep-shadow: #3A3562;
+            --tech-white: #F1F1F1;
+            
+            --font-headers: 'Inter', sans-serif;
+            --font-body: 'Roboto', sans-serif;
+        }
+
+        /* Base para formato A4 (Impresión/PDF) */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark-void);
+            color: var(--tech-white);
+            font-family: var(--font-body);
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .page {
+            width: 210mm;
+            min-height: 297mm;
+            padding: 20mm;
+            margin: 10mm auto;
+            background: var(--dark-void);
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            box-sizing: border-box;
+            position: relative;
+        }
+
+        /* Cabecera / Header del Reporte */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--deep-shadow);
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        .logo-container img {
+            height: 40px; /* Usar el logo_vertical o principal aquí */
+        }
+
+        .report-meta {
+            text-align: right;
+            font-size: 0.85rem;
+            color: #A0A0A0;
+        }
+
+        .report-meta h1 {
+            color: var(--neon-accent);
+            font-family: var(--font-headers);
+            margin: 0 0 5px 0;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Contenido Principal */
+        h2, h3, h4 {
+            font-family: var(--font-headers);
+            color: var(--tech-white);
+            margin-top: 30px;
+        }
+
+        h2 {
+            color: var(--catch-purple);
+            border-left: 4px solid var(--neon-accent);
+            padding-left: 10px;
+        }
+
+        p {
+            line-height: 1.6;
+            color: #D0D0D0;
+        }
+
+        /* Tarjetas de Métricas (Dashboards) */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .metric-card {
+            background: linear-gradient(145deg, #101015 0%, #010102 100%);
+            border: 1px solid var(--deep-shadow);
+            border-radius: 8px;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .metric-card h4 {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #A0A0A0;
+            font-weight: 500;
+        }
+
+        .metric-card .value {
+            font-family: var(--font-headers);
+            font-size: 2rem;
+            color: var(--neon-accent);
+            font-weight: 700;
+            margin: 10px 0;
+        }
+
+        /* Tablas de Datos */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--deep-shadow);
+        }
+
+        th {
+            background-color: rgba(115, 104, 207, 0.1);
+            color: var(--catch-purple);
+            font-family: var(--font-headers);
+            font-weight: 600;
+        }
+
+        tr:nth-child(even) {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        /* Footer del Reporte */
+        footer {
+            position: absolute;
+            bottom: 20mm;
+            left: 20mm;
+            right: 20mm;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.8rem;
+            color: #707070;
+            border-top: 1px solid var(--deep-shadow);
+            padding-top: 15px;
+        }
+
+        @media print {
+            body { background: var(--dark-void); }
+            .page { margin: 0; border: initial; box-shadow: initial; }
+            .page { page-break-after: always; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- Cabecera -->
+        <header>
+            <div class="logo-container">
+                <!-- Asegúrate de copiar el logo aquí si se mueve de carpeta -->
+                <img src="logo.jpeg" alt="Vizcatch Analytics Logo">
+            </div>
+            <div class="report-meta">
+                <h1>Reporte Analítico</h1>
+                <div>Fecha: 07 Octubre 2026</div>
+                <div>ID: VZ-2026-001</div>
+            </div>
+        </header>
+
+        <!-- Resumen -->
+        <h2>Resumen Ejecutivo</h2>
+        <p>Este documento es una plantilla maestra diseñada siguiendo estrictamente el <strong>Brand Guidelines</strong> de Vizcatch Analytics. Optimizada para exportación a PDF, mantiene el contraste del Dark Mode y los acentos en Neón Purple.</p>
+
+        <!-- Métricas Clave -->
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <h4>Tráfico Total</h4>
+                <div class="value">124.5K</div>
+                <div style="color: #4CAF50; font-size: 0.8rem;">↑ 12% vs mes anterior</div>
+            </div>
+            <div class="metric-card">
+                <h4>Tasa de Conversión</h4>
+                <div class="value">3.2%</div>
+                <div style="color: #4CAF50; font-size: 0.8rem;">↑ 0.5% vs mes anterior</div>
+            </div>
+            <div class="metric-card">
+                <h4>Nodos Activos</h4>
+                <div class="value">8,902</div>
+                <div style="color: #F44336; font-size: 0.8rem;">↓ 2% vs mes anterior</div>
+            </div>
+        </div>
+
+        <!-- Tabla de Datos -->
+        <h2>Desglose de Orígenes</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Canal</th>
+                    <th>Usuarios</th>
+                    <th>Sesiones</th>
+                    <th>% Rebote</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Búsqueda Orgánica</td>
+                    <td>45,000</td>
+                    <td>52,100</td>
+                    <td>42%</td>
+                </tr>
+                <tr>
+                    <td>Directo</td>
+                    <td>22,300</td>
+                    <td>28,400</td>
+                    <td>35%</td>
+                </tr>
+                <tr>
+                    <td>Redes Sociales</td>
+                    <td>15,800</td>
+                    <td>18,200</td>
+                    <td>55%</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Pie de página -->
+        <footer>
+            <div>© 2026 Vizcatch Analytics. Confidencial.</div>
+            <div>Página 1 de 1</div>
+        </footer>
+    </div>
+</body>
+</html>

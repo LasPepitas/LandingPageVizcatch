@@ -18,7 +18,7 @@
     --studio-outline-subtle: rgba(255, 255, 255, 0.05);
 
     /* Electric Crimson Accent (STRV Signature) */
-    --studio-accent: #FF1E38;
+    --studio-accent: #7368CF;
     --studio-accent-hover: #E0132C;
     --studio-accent-subtle: rgba(255, 30, 56, 0.12);
 
@@ -50,7 +50,7 @@
   }
 
   ::selection {
-    background-color: #FF1E38;
+    background-color: #7368CF;
     color: #FFFFFF;
   }
 }

@@ -1,10 +1,10 @@
 ---
-import Container from '../common/Container.astro';
-import PeruFlag from '../icons/PeruFlag.astro';
-import WhatsApp from '../icons/WhatsApp.astro';
-import Mail from '../icons/Mail.astro';
-import MapPin from '../icons/MapPin.astro';
-import ShieldCheck from '../icons/ShieldCheck.astro';
+import Container from "../common/Container.astro";
+import PeruFlag from "../icons/PeruFlag.astro";
+import WhatsApp from "../icons/WhatsApp.astro";
+import Mail from "../icons/Mail.astro";
+import MapPin from "../icons/MapPin.astro";
+import ShieldCheck from "../icons/ShieldCheck.astro";
 ---
 
 <footer class="border-t border-[#23242A] bg-[#080808] text-[#A1A1AA] text-sm">
@@ -12,111 +12,196 @@ import ShieldCheck from '../icons/ShieldCheck.astro';
   <div class="border-b border-[#23242A] py-8 bg-[#0C0D10]">
     <Container class="grid grid-cols-1 md:grid-cols-3 gap-6 text-left">
       <div class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-md bg-[#18191E] border border-[#2A2B32] flex items-center justify-center text-[#FFFFFF]">
+        <div
+          class="w-9 h-9 rounded-md bg-[#18191E] border border-[#2A2B32] flex items-center justify-center text-[#FFFFFF]"
+        >
           <ShieldCheck class="w-4 h-4" />
         </div>
         <div>
-          <div class="font-bold text-[#FFFFFF] text-xs">100% SOBERANÍA DE CÓDIGO</div>
-          <div class="text-xs text-[#71717A]">Sin licencias de terceros ni lock-in</div>
+          <div class="font-bold text-[#FFFFFF] text-xs">
+            100% SOBERANÍA DE CÓDIGO
+          </div>
+          <div class="text-xs text-[#71717A]">
+            Sin licencias de terceros ni lock-in
+          </div>
         </div>
       </div>
 
       <div class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-md bg-[#18191E] border border-[#2A2B32] flex items-center justify-center text-[#FFFFFF]">
+        <div
+          class="w-9 h-9 rounded-md bg-[#18191E] border border-[#2A2B32] flex items-center justify-center text-[#FFFFFF]"
+        >
           <PeruFlag class="w-5 h-3.5" />
         </div>
         <div>
           <div class="font-bold text-[#FFFFFF] text-xs">ECOSISTEMA PERÚ</div>
-          <div class="text-xs text-[#71717A]">SUNAT XML, Niubiz, Culqi, Yape y Plin</div>
+          <div class="text-xs text-[#71717A]">
+            Facturación SUNAT, Niubiz, Culqi, Yape y Plin
+          </div>
         </div>
       </div>
 
       <div class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-md bg-[#18191E] border border-[#2A2B32] flex items-center justify-center text-[#FF1E38]">
-          <span class="font-bold text-xs">99.9%</span>
+        <div
+          class="w-9 h-9 rounded-md bg-[#18191E] border border-[#2A2B32] flex items-center justify-center text-[#7368CF]"
+        >
+          <span class="font-bold text-xs">SLA</span>
         </div>
         <div>
-          <div class="font-bold text-[#FFFFFF] text-xs">SLA Y ALTA DISPONIBILIDAD</div>
-          <div class="text-xs text-[#71717A]">Arquitectura cloud y soporte directo</div>
+          <div class="font-bold text-[#FFFFFF] text-xs">
+            ALTA DISPONIBILIDAD
+          </div>
+          <div class="text-xs text-[#71717A]">
+            Arquitectura cloud y soporte directo
+          </div>
         </div>
       </div>
     </Container>
   </div>
 
   <!-- Main Footer Links Grid -->
-  <Container class="py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10">
+  <Container
+    class="py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-10"
+  >
     <!-- Brand Info (Col 1 & 2) -->
     <div class="lg:col-span-2 space-y-4">
       <a href="/" class="flex items-center gap-2">
-        <span class="font-black text-xl text-[#FFFFFF] tracking-tight font-display">VIZCATCH<span class="text-[#FF1E38]">.</span></span>
+        <img
+          src="/isotipo.png"
+          alt="Vizcatch Logo"
+          class="w-8 h-8 object-contain"
+        />
+        <span
+          class="font-black text-xl text-[#FFFFFF] tracking-tight font-display"
+          >VIZCATCH<span class="text-[#7368CF]">.</span></span
+        >
       </a>
       <p class="text-xs text-[#A1A1AA] leading-relaxed max-w-sm">
-        Firma de ingeniería de software a medida en Perú. Diseñamos y desarrollamos CRMs, plataformas e-commerce de alto tráfico, landing pages de conversión y software cloud con rendimiento extremo.
+        Firma de ingeniería de software a medida en Puno, Perú. Diseñamos y
+        desarrollamos CRMs, plataformas e-commerce de alto tráfico, landing
+        pages de conversión y software cloud con rendimiento extremo.
       </p>
       <div class="flex flex-col gap-2 pt-2 text-xs text-[#71717A]">
         <div class="flex items-center gap-2">
           <MapPin class="w-3.5 h-3.5 text-[#A1A1AA] shrink-0" />
-          <span>Lima, Perú (Atención nacional e internacional)</span>
+          <span>Puno, Perú (Atención nacional e internacional)</span>
         </div>
         <div class="flex items-center gap-2">
           <Mail class="w-3.5 h-3.5 text-[#A1A1AA] shrink-0" />
-          <a href="mailto:contacto@vizcatch.com" class="hover:text-[#FFFFFF] transition-colors">contacto@vizcatch.com</a>
+          <a
+            href="mailto:noe.u.machaca@gmail.com"
+            class="hover:text-[#FFFFFF] transition-colors"
+            >noe.u.machaca@gmail.com</a
+          >
         </div>
       </div>
     </div>
 
     <!-- Servicios -->
     <div class="space-y-3">
-      <div class="text-[11px] font-bold text-[#FFFFFF] uppercase tracking-[0.18em]">Servicios</div>
+      <div
+        class="text-[11px] font-bold text-[#FFFFFF] uppercase tracking-[0.18em]"
+      >
+        Servicios
+      </div>
       <ul class="space-y-2 text-xs text-[#A1A1AA]">
-        <li><a href="/servicios/crms-erp" class="hover:text-[#FFFFFF] transition-colors">CRMs y Sistemas Internos</a></li>
-        <li><a href="/servicios/ecommerce" class="hover:text-[#FFFFFF] transition-colors">E-commerce a Medida</a></li>
-        <li><a href="/servicios/landings" class="hover:text-[#FFFFFF] transition-colors">Landings de Conversión</a></li>
-        <li><a href="/servicios/software-medida" class="hover:text-[#FFFFFF] transition-colors">Software & APIs Cloud</a></li>
-        <li><a href="/servicios" class="text-[#FF1E38] font-semibold hover:underline">Ver Todos los Servicios →</a></li>
+        <li>
+          <a
+            href="/servicios/crms-erp"
+            class="hover:text-[#FFFFFF] transition-colors"
+            >CRMs y Sistemas Internos</a
+          >
+        </li>
+        <li>
+          <a
+            href="/servicios/ecommerce"
+            class="hover:text-[#FFFFFF] transition-colors"
+            >E-commerce a Medida</a
+          >
+        </li>
+        <li>
+          <a
+            href="/servicios/landings"
+            class="hover:text-[#FFFFFF] transition-colors"
+            >Landings de Conversión</a
+          >
+        </li>
+        <li>
+          <a
+            href="/servicios/software-medida"
+            class="hover:text-[#FFFFFF] transition-colors"
+            >Software & APIs Cloud</a
+          >
+        </li>
+        <li>
+          <a
+            href="/servicios"
+            class="text-[#7368CF] font-semibold hover:underline"
+            >Ver Todos los Servicios →</a
+          >
+        </li>
       </ul>
     </div>
 
     <!-- Empresa & Filosofía -->
     <div class="space-y-3">
-      <div class="text-[11px] font-bold text-[#FFFFFF] uppercase tracking-[0.18em]">Empresa</div>
+      <div
+        class="text-[11px] font-bold text-[#FFFFFF] uppercase tracking-[0.18em]"
+      >
+        Empresa
+      </div>
       <ul class="space-y-2 text-xs text-[#A1A1AA]">
-        <li><a href="/por-que-full-code" class="hover:text-[#FFFFFF] transition-colors">Por qué Full Code</a></li>
-        <li><a href="/casos-de-exito" class="hover:text-[#FFFFFF] transition-colors">Casos de Éxito</a></li>
-        <li><a href="/nosotros" class="hover:text-[#FFFFFF] transition-colors">Filosofía & Estándares</a></li>
-        <li><a href="/contacto" class="hover:text-[#FFFFFF] transition-colors">Cotizador de Proyectos</a></li>
+        <li>
+          <a
+            href="/por-que-full-code"
+            class="hover:text-[#FFFFFF] transition-colors">Por qué Full Code</a
+          >
+        </li>
+        <li>
+          <a
+            href="/casos-de-exito"
+            class="hover:text-[#FFFFFF] transition-colors">Casos de Éxito</a
+          >
+        </li>
+        <li>
+          <a href="/nosotros" class="hover:text-[#FFFFFF] transition-colors"
+            >Filosofía & Estándares</a
+          >
+        </li>
+        <li>
+          <a href="/contacto" class="hover:text-[#FFFFFF] transition-colors"
+            >Cotizador de Proyectos</a
+          >
+        </li>
       </ul>
     </div>
 
     <!-- Contacto Directo -->
     <div class="space-y-3">
-      <div class="text-[11px] font-bold text-[#FFFFFF] uppercase tracking-[0.18em]">Contacto Directo</div>
+      <div
+        class="text-[11px] font-bold text-[#FFFFFF] uppercase tracking-[0.18em]"
+      >
+        Contacto Directo
+      </div>
       <p class="text-xs text-[#A1A1AA]">
-        Conversá con un ingeniero de software en Lima hoy mismo.
+        Conversa con un ingeniero de software en Puno hoy mismo.
       </p>
-      <a 
-        href="https://wa.me/51999999999?text=Hola%20Vizcatch,%20quiero%20cotizar%20un%20proyecto%20de%20software"
-        target="_blank" 
+      <a
+        href="https://wa.me/51965100861?text=Hola%20Vizcatch,%20quiero%20cotizar%20un%20proyecto%20de%20software"
+        target="_blank"
         rel="noopener noreferrer"
         class="inline-flex items-center gap-2 px-3.5 py-2 rounded-md bg-[#18191E] border border-[#22C55E]/40 text-[#22C55E] hover:bg-[#22C55E]/10 text-xs font-semibold transition-all"
       >
         <WhatsApp class="w-3.5 h-3.5" />
-        <span>+51 999 999 999</span>
+        <span>+51 965 100 861</span>
       </a>
     </div>
   </Container>
 
   <!-- Bottom Bar -->
   <div class="border-t border-[#23242A] py-6 text-xs text-[#71717A]">
-    <Container class="flex flex-col sm:flex-row items-center justify-between gap-4">
-      <div>
-        © {new Date().getFullYear()} Vizcatch. Ingeniería de software en Perú.
-      </div>
-      <div class="flex items-center gap-4 text-xs">
-        <span>RUC 20XXXXXXXXX</span>
-        <span>•</span>
-        <span>Emisión Electrónica SUNAT</span>
-      </div>
+    <Container class="flex items-center justify-center gap-4 text-center">
+      © {new Date().getFullYear()} Vizcatch. Ingeniería de software en Perú.
     </Container>
   </div>
 </footer>

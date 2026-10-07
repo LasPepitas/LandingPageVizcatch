@@ -6,32 +6,32 @@ import Code from '../icons/Code.astro';
 
 const teamMembers = [
   {
-    name: 'Franco Ramírez',
-    role: 'Lead Software Architect',
-    focus: 'Arquitectura Limpia & Sistemas Distribuidos',
-    bio: 'Especialista en diseño de microservicios, bases de datos PostgreSQL y optimización de rendimiento edge. 12+ años liderando proyectos de software de misión crítica.',
-    skills: ['Astro', 'TypeScript', 'Go', 'PostgreSQL', 'DDD']
+    name: 'Noe U. Machaca',
+    role: 'Lead Full Stack Developer',
+    focus: 'Arquitectura Limpia & Sistemas Escalables',
+    bio: 'Especialista en diseño de arquitecturas de software escalables, desarrollo full code y liderazgo técnico. Garantiza el rendimiento de plataformas transaccionales de misión crítica.',
+    skills: ['Astro', 'React', 'Node.js', 'PostgreSQL', 'DDD']
   },
   {
-    name: 'Renzo Morales',
-    role: 'Head of Cloud & DevOps',
-    focus: 'Infraestructura Cloud & Resiliencia',
-    bio: 'Arquitecto cloud certificado AWS. Diseña entornos de alta concurrencia, pipelines de CI/CD automatizados y seguridad perimetral con Cloudflare.',
-    skills: ['AWS', 'Docker', 'Linux', 'Cloudflare', 'GitHub Actions']
+    name: 'Victor R. Maye',
+    role: 'Full Stack Developer',
+    focus: 'Desarrollo End-to-End & Performance',
+    bio: 'Enfocado en construir interfaces ultra rápidas y backends robustos. Experto en optimización, ecosistema de React y flujos de trabajo ágiles de nivel corporativo.',
+    skills: ['React', 'TypeScript', 'Express', 'Tailwind CSS', 'Git']
   },
   {
-    name: 'Diego Salazar',
-    role: 'Senior Backend & Payments Lead',
-    focus: 'Ecosistema Transaccional & SUNAT',
-    bio: 'Especialista en pasarelas de pago peruanas (Niubiz, Culqi, Yape/Plin) y conectividad directa con facturación electrónica SUNAT XML sin intermediarios.',
-    skills: ['Node.js', 'REST APIs', 'GraphQL', 'SUNAT XML', 'Redis']
+    name: 'Julio S. Eduardo',
+    role: 'QA & UI/UX Engineer',
+    focus: 'Experiencia de Usuario & Testing Automatizado',
+    bio: 'Diseña interfaces de alta conversión B2B y asegura la resiliencia del producto final mediante pruebas automatizadas, accesibilidad y metodologías rigurosas de QA.',
+    skills: ['Figma', 'Cypress', 'Jest', 'UI/UX Design', 'Web Vitals']
   },
   {
-    name: 'Valeria Torres',
-    role: 'UI/UX Systems Engineer',
-    focus: 'Design Systems & Frontend Performance',
-    bio: 'Diseña interfaces de usuario de alta fidelidad orientadas a conversión B2B, accesibilidad WCAG y puntuación perfecta 100/100 en Google PageSpeed.',
-    skills: ['React', 'Tailwind CSS', 'Figma', 'Web Vitals', 'Atomic UI']
+    name: 'Rene R. Ccoyto',
+    role: 'Backend Developer',
+    focus: 'Ecosistema Transaccional & APIs',
+    bio: 'Arquitecto de lógica de negocio y bases de datos relacionales. Experto en integraciones complejas como pasarelas de pago, facturación electrónica y despliegue cloud.',
+    skills: ['Node.js', 'Python', 'Docker', 'PostgreSQL', 'AWS']
   }
 ];
 ---
@@ -42,24 +42,24 @@ const teamMembers = [
       <SectionHeading 
         tag="EQUIPO DE INGENIERÍA"
         title="ARQUITECTOS Y ESPECIALISTAS SENIOR"
-        subtitle="Profesionales basados en Lima con experiencia comprobada en plataformas transaccionales, infraestructura cloud e integraciones locales."
+        subtitle="Profesionales basados en Puno con experiencia comprobada en plataformas transaccionales, infraestructura cloud e integraciones locales."
       />
 
       <!-- Team Grid -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {teamMembers.map((member) => (
-          <div class="p-6 rounded-lg bg-[#101114] border border-[#23242A] hover:border-[#FF1E38]/40 transition-all flex flex-col justify-between space-y-5 group">
+          <div class="p-6 rounded-lg bg-[#101114] border border-[#23242A] hover:border-[#7368CF]/40 transition-all flex flex-col justify-between space-y-5 group">
             <div class="space-y-4">
               <!-- Avatar Placeholder with Initials & Red Accent -->
-              <div class="w-12 h-12 rounded-lg bg-[#18191E] border border-[#2A2B32] flex items-center justify-center text-sm font-bold text-[#FFFFFF] group-hover:border-[#FF1E38] transition-colors">
+              <div class="w-12 h-12 rounded-lg bg-[#18191E] border border-[#2A2B32] flex items-center justify-center text-sm font-bold text-[#FFFFFF] group-hover:border-[#7368CF] transition-colors">
                 {member.name.split(' ').map(n => n[0]).join('')}
               </div>
 
               <div>
-                <h3 class="text-base font-bold text-[#FFFFFF] tracking-tight group-hover:text-[#FF1E38] transition-colors">
+                <h3 class="text-base font-bold text-[#FFFFFF] tracking-tight group-hover:text-[#7368CF] transition-colors">
                   {member.name}
                 </h3>
-                <div class="text-[11px] font-semibold text-[#FF1E38] uppercase tracking-wider mt-0.5">
+                <div class="text-[11px] font-semibold text-[#7368CF] uppercase tracking-wider mt-0.5">
                   {member.role}
                 </div>
                 <div class="text-[11px] text-[#71717A] mt-0.5">
@@ -87,7 +87,7 @@ const teamMembers = [
       <!-- Trust Strip below Team -->
       <div class="p-6 rounded-lg bg-[#101114] border border-[#23242A] flex flex-col sm:flex-row items-center justify-between gap-6 text-xs text-[#A1A1AA]">
         <div class="flex items-center gap-3">
-          <div class="w-8 h-8 rounded bg-[#18191E] border border-[#2A2B32] flex items-center justify-center text-[#FF1E38] shrink-0">
+          <div class="w-8 h-8 rounded bg-[#18191E] border border-[#2A2B32] flex items-center justify-center text-[#7368CF] shrink-0">
             <Code class="w-4 h-4" />
           </div>
           <div>
@@ -98,7 +98,7 @@ const teamMembers = [
 
         <div class="flex items-center gap-2 shrink-0">
           <PeruFlag class="w-4 h-3" />
-          <span class="font-semibold text-[#FFFFFF]">Equipo 100% en Lima, Perú</span>
+          <span class="font-semibold text-[#FFFFFF]">Equipo 100% en Puno, Perú</span>
         </div>
       </div>
     </div>

@@ -1,94 +1,129 @@
 ---
-import Container from '../common/Container.astro';
-import Button from '../common/Button.astro';
-import WhatsApp from '../icons/WhatsApp.astro';
-import ChevronDown from '../icons/ChevronDown.astro';
-import Menu from '../icons/Menu.astro';
-import X from '../icons/X.astro';
-import ArrowRight from '../icons/ArrowRight.astro';
+import Container from "../common/Container.astro";
+import Button from "../common/Button.astro";
+import WhatsApp from "../icons/WhatsApp.astro";
+import ChevronDown from "../icons/ChevronDown.astro";
+import Menu from "../icons/Menu.astro";
+import X from "../icons/X.astro";
+import ArrowRight from "../icons/ArrowRight.astro";
 
 const currentPath = Astro.url.pathname;
 
 const navLinks = [
-  { name: 'Inicio', href: '/' },
-  { 
-    name: 'Servicios', 
-    href: '/servicios',
+  { name: "Inicio", href: "/" },
+  {
+    name: "Servicios",
+    href: "/servicios",
     hasDropdown: true,
     sublinks: [
-      { name: 'CRMs y Sistemas Internos', href: '/servicios/crms-erp', desc: 'Automatización y control de ventas' },
-      { name: 'E-commerce a Medida', href: '/servicios/ecommerce', desc: 'Niubiz, Culqi, Yape/Plin y SUNAT' },
-      { name: 'Landings de Conversión', href: '/servicios/landings', desc: 'Rendimiento 100/100 para pauta' },
-      { name: 'Software & Cloud a Medida', href: '/servicios/software-medida', desc: 'APIs, bases de datos y arquitectura' },
-    ]
+      {
+        name: "CRMs y Sistemas Internos",
+        href: "/servicios/crms-erp",
+        desc: "Automatización y control de ventas",
+      },
+      {
+        name: "E-commerce a Medida",
+        href: "/servicios/ecommerce",
+        desc: "Niubiz, Culqi, Yape/Plin y SUNAT",
+      },
+      {
+        name: "Landings de Conversión",
+        href: "/servicios/landings",
+        desc: "Rendimiento 100/100 para pauta",
+      },
+      {
+        name: "Software & Cloud a Medida",
+        href: "/servicios/software-medida",
+        desc: "APIs, bases de datos y arquitectura",
+      },
+    ],
   },
-  { name: 'Por qué Full Code', href: '/por-que-full-code' },
-  { name: 'Casos de Éxito', href: '/casos-de-exito' },
-  { name: 'Nosotros', href: '/nosotros' },
-  { name: 'Contacto', href: '/contacto' },
+  { name: "Por qué Full Code", href: "/por-que-full-code" },
+  { name: "Casos de Éxito", href: "/casos-de-exito" },
+  { name: "Nosotros", href: "/nosotros" },
+  { name: "Contacto", href: "/contacto" },
 ];
 ---
 
-<header class="sticky top-0 z-50 w-full border-b border-[#23242A] bg-[#080808]/90 backdrop-blur-xl transition-all">
+<header
+  class="sticky top-0 z-50 w-full border-b border-[#23242A] bg-[#080808]/90 backdrop-blur-xl transition-all"
+>
   <Container class="flex h-16 sm:h-20 items-center justify-between">
     <!-- Brand Logo -->
     <a href="/" class="flex items-center gap-2.5 group">
-      <span class="font-display text-2xl font-bold tracking-wider text-[#FFFFFF] group-hover:text-[#FF1E38] transition-colors">
-        VIZCATCH<span class="text-[#FF1E38]">.</span>
+      <img src="/isotipo.png" alt="Vizcatch Logo" class="w-8 h-8 object-contain" />
+      <span
+        class="font-display text-2xl font-bold tracking-wider text-[#FFFFFF] group-hover:text-[#7368CF] transition-colors"
+      >
+        VIZCATCH<span class="text-[#7368CF]">.</span>
       </span>
     </a>
 
     <!-- Desktop Nav Links -->
-    <nav class="hidden lg:flex items-center gap-6 text-xs uppercase tracking-wider font-semibold">
-      <a 
-        href="/casos-de-exito" 
-        class={`transition-colors ${currentPath === '/casos-de-exito' ? 'text-[#FF1E38]' : 'text-[#A1A1AA] hover:text-[#FFFFFF]'}`}
+    <nav
+      class="hidden lg:flex items-center gap-6 text-xs uppercase tracking-wider font-semibold"
+    >
+      <a
+        href="/casos-de-exito"
+        class={`transition-colors ${currentPath === "/casos-de-exito" ? "text-[#7368CF]" : "text-[#A1A1AA] hover:text-[#FFFFFF]"}`}
       >
         Casos de Éxito
       </a>
 
       <!-- Services dropdown -->
       <div class="relative group">
-        <a 
+        <a
           href="/servicios"
           class={`transition-colors flex items-center gap-1 ${
-            currentPath.startsWith('/servicios') 
-              ? 'text-[#FF1E38]' 
-              : 'text-[#A1A1AA] hover:text-[#FFFFFF]'
+            currentPath.startsWith("/servicios")
+              ? "text-[#7368CF]"
+              : "text-[#A1A1AA] hover:text-[#FFFFFF]"
           }`}
         >
           <span>Servicios</span>
-          <ChevronDown class="w-3 h-3 text-[#71717A] group-hover:rotate-180 transition-transform duration-150" />
+          <ChevronDown
+            class="w-3 h-3 text-[#71717A] group-hover:rotate-180 transition-transform duration-150"
+          />
         </a>
 
         <!-- Dropdown Menu -->
-        <div class="absolute left-0 top-full pt-2 w-80 opacity-0 translate-y-1 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-150">
-          <div class="rounded-lg bg-[#121317] border border-[#23242A] p-2 shadow-2xl">
-            {navLinks[1].sublinks?.map((sub) => (
-              <a 
-                href={sub.href}
-                class={`block p-3 rounded-md transition-colors ${
-                  currentPath === sub.href ? 'bg-[#18191F] text-[#FF1E38]' : 'hover:bg-[#18191F]'
-                }`}
-              >
-                <div class="text-xs font-bold text-[#FFFFFF]">{sub.name}</div>
-                <div class="text-[11px] text-[#71717A] mt-0.5">{sub.desc}</div>
-              </a>
-            ))}
+        <div
+          class="absolute left-0 top-full pt-2 w-80 opacity-0 translate-y-1 pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:pointer-events-auto transition-all duration-150"
+        >
+          <div
+            class="rounded-lg bg-[#121317] border border-[#23242A] p-2 shadow-2xl"
+          >
+            {
+              navLinks[1].sublinks?.map((sub) => (
+                <a
+                  href={sub.href}
+                  class={`block p-3 rounded-md transition-colors ${
+                    currentPath === sub.href
+                      ? "bg-[#18191F] text-[#7368CF]"
+                      : "hover:bg-[#18191F]"
+                  }`}
+                >
+                  <div class="text-xs font-bold text-[#FFFFFF]">{sub.name}</div>
+                  <div class="text-[11px] text-[#71717A] mt-0.5">
+                    {sub.desc}
+                  </div>
+                </a>
+              ))
+            }
           </div>
         </div>
       </div>
 
-      <a 
-        href="/por-que-full-code" 
-        class={`transition-colors ${currentPath === '/por-que-full-code' ? 'text-[#FF1E38]' : 'text-[#A1A1AA] hover:text-[#FFFFFF]'}`}
+      <a
+        href="/por-que-full-code"
+        class={`transition-colors ${currentPath === "/por-que-full-code" ? "text-[#7368CF]" : "text-[#A1A1AA] hover:text-[#FFFFFF]"}`}
       >
         Por qué Full Code
       </a>
 
-      <a 
-        href="/nosotros" 
-        class={`transition-colors ${currentPath === '/nosotros' ? 'text-[#FF1E38]' : 'text-[#A1A1AA] hover:text-[#FFFFFF]'}`}
+      <a
+        href="/nosotros"
+        class={`transition-colors ${currentPath === "/nosotros" ? "text-[#7368CF]" : "text-[#A1A1AA] hover:text-[#FFFFFF]"}`}
       >
         Nosotros
       </a>
@@ -96,24 +131,23 @@ const navLinks = [
 
     <!-- Header Actions -->
     <div class="hidden sm:flex items-center gap-4">
-      <a href="mailto:contacto@vizcatch.com" class="text-xs text-[#71717A] hover:text-[#A1A1AA] font-medium hidden xl:inline">
-        contacto@vizcatch.com
-      </a>
-      <Button 
-        variant="primary" 
-        size="sm" 
-        href="/contacto"
+      <a
+        href="mailto:noe.u.machaca@gmail.com"
+        class="text-xs text-[#71717A] hover:text-[#A1A1AA] font-medium hidden xl:inline"
       >
+        noe.u.machaca@gmail.com
+      </a>
+      <Button variant="primary" size="sm" href="/contacto">
         <span>Cotizar Proyecto</span>
         <ArrowRight class="w-3.5 h-3.5" />
       </Button>
     </div>
 
     <!-- Mobile Menu Toggle Button -->
-    <button 
-      id="mobile-menu-open-btn" 
-      type="button" 
-      class="lg:hidden p-2.5 rounded-lg text-[#FFFFFF] bg-[#121317] border border-[#23242A] hover:border-[#FF1E38] focus:outline-none transition-colors"
+    <button
+      id="mobile-menu-open-btn"
+      type="button"
+      class="lg:hidden p-2.5 rounded-lg text-[#FFFFFF] bg-[#121317] border border-[#23242A] hover:border-[#7368CF] focus:outline-none transition-colors"
       aria-label="Abrir menú"
     >
       <Menu class="w-5 h-5" />
@@ -122,22 +156,27 @@ const navLinks = [
 </header>
 
 <!-- Full-Screen Studio Mobile Navigation Modal (Root level, 100vh solid dark background) -->
-<div 
-  id="mobile-menu" 
+<div
+  id="mobile-menu"
   class="fixed inset-0 z-[999] hidden flex-col bg-[#080808] text-[#FFFFFF] overflow-y-auto"
 >
   <!-- Top bar inside fullscreen overlay -->
-  <div class="h-16 sm:h-20 border-b border-[#23242A] px-4 sm:px-6 flex items-center justify-between shrink-0 bg-[#080808] sticky top-0 z-10">
+  <div
+    class="h-16 sm:h-20 border-b border-[#23242A] px-4 sm:px-6 flex items-center justify-between shrink-0 bg-[#080808] sticky top-0 z-10"
+  >
     <a href="/" class="flex items-center gap-2" id="mobile-logo-link">
-      <span class="font-display text-2xl font-bold tracking-wider text-[#FFFFFF]">
-        VIZCATCH<span class="text-[#FF1E38]">.</span>
+      <img src="/isotipo.png" alt="Vizcatch Logo" class="w-8 h-8 object-contain" />
+      <span
+        class="font-display text-2xl font-bold tracking-wider text-[#FFFFFF]"
+      >
+        VIZCATCH<span class="text-[#7368CF]">.</span>
       </span>
     </a>
 
-    <button 
-      id="mobile-menu-close-btn" 
-      type="button" 
-      class="p-2.5 rounded-lg text-[#FFFFFF] bg-[#121317] border border-[#23242A] hover:border-[#FF1E38] focus:outline-none transition-colors"
+    <button
+      id="mobile-menu-close-btn"
+      type="button"
+      class="p-2.5 rounded-lg text-[#FFFFFF] bg-[#121317] border border-[#23242A] hover:border-[#7368CF] focus:outline-none transition-colors"
       aria-label="Cerrar menú"
     >
       <X class="w-5 h-5 text-[#FFFFFF]" />
@@ -146,72 +185,116 @@ const navLinks = [
 
   <!-- Content Container inside fullscreen overlay -->
   <div class="p-6 sm:p-8 space-y-8 flex-1 max-w-lg mx-auto w-full">
-    
     <!-- Status pill -->
-    <div class="flex items-center justify-between border-b border-[#23242A] pb-4">
-      <span class="inline-flex items-center gap-2 text-[11px] font-bold text-[#10B981] uppercase tracking-wider">
+    <div
+      class="flex items-center justify-between border-b border-[#23242A] pb-4"
+    >
+      <span
+        class="inline-flex items-center gap-2 text-[11px] font-bold text-[#10B981] uppercase tracking-wider"
+      >
         <span class="w-2 h-2 bg-[#10B981] rounded-full animate-pulse"></span>
-        Ingeniería en Lima · En línea
+        Ingeniería en Puno · En línea
       </span>
-      <span class="text-[11px] font-bold text-[#71717A] uppercase tracking-widest">
+      <span
+        class="text-[11px] font-bold text-[#71717A] uppercase tracking-widest"
+      >
         Navegación Oficial
       </span>
     </div>
 
     <!-- Main Monumental Links -->
     <nav class="space-y-3">
-      <a 
-        href="/casos-de-exito" 
-        class="flex items-center justify-between py-2.5 border-b border-[#1A1B20] text-2xl sm:text-3xl font-display text-[#FFFFFF] hover:text-[#FF1E38] transition-colors group"
+      <a
+        href="/casos-de-exito"
+        class="flex items-center justify-between py-2.5 border-b border-[#1A1B20] text-2xl sm:text-3xl font-display text-[#FFFFFF] hover:text-[#7368CF] transition-colors group"
       >
         <span class="flex items-center gap-3">
-          <span class="text-xs font-sans text-[#71717A] group-hover:text-[#FF1E38]">01</span>
+          <span
+            class="text-xs font-sans text-[#71717A] group-hover:text-[#7368CF]"
+            >01</span
+          >
           CASOS DE ÉXITO
         </span>
-        <ArrowRight class="w-5 h-5 text-[#71717A] group-hover:text-[#FF1E38] group-hover:translate-x-1 transition-all" />
+        <ArrowRight
+          class="w-5 h-5 text-[#71717A] group-hover:text-[#7368CF] group-hover:translate-x-1 transition-all"
+        />
       </a>
 
       <!-- Collapsible Services Accordion (Closed by default) -->
       <details class="group border-b border-[#1A1B20] py-2.5">
-        <summary class="flex items-center justify-between text-2xl sm:text-3xl font-display text-[#FFFFFF] cursor-pointer list-none group-open:text-[#FF1E38] transition-colors focus:outline-none">
+        <summary
+          class="flex items-center justify-between text-2xl sm:text-3xl font-display text-[#FFFFFF] cursor-pointer list-none group-open:text-[#7368CF] transition-colors focus:outline-none"
+        >
           <span class="flex items-center gap-3">
-            <span class="text-xs font-sans text-[#71717A] group-open:text-[#FF1E38]">02</span>
+            <span
+              class="text-xs font-sans text-[#71717A] group-open:text-[#7368CF]"
+              >02</span
+            >
             SERVICIOS A MEDIDA
           </span>
-          <ChevronDown class="w-5 h-5 text-[#71717A] group-open:rotate-180 group-open:text-[#FF1E38] transition-transform duration-200" />
+          <ChevronDown
+            class="w-5 h-5 text-[#71717A] group-open:rotate-180 group-open:text-[#7368CF] transition-transform duration-200"
+          />
         </summary>
-        
+
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-3 pb-2 mt-1">
-          <a 
-            href="/servicios/crms-erp" 
-            class="p-3.5 rounded-lg bg-[#101114] border border-[#23242A] hover:border-[#FF1E38]/50 transition-colors group/item"
+          <a
+            href="/servicios/crms-erp"
+            class="p-3.5 rounded-lg bg-[#101114] border border-[#23242A] hover:border-[#7368CF]/50 transition-colors group/item"
           >
-            <div class="text-xs font-bold text-[#FFFFFF] group-hover/item:text-[#FF1E38] transition-colors">CRMs y Sistemas Internos</div>
-            <div class="text-[11px] text-[#71717A] mt-0.5">Ventas, pipeline y control</div>
+            <div
+              class="text-xs font-bold text-[#FFFFFF] group-hover/item:text-[#7368CF] transition-colors"
+            >
+              CRMs y Sistemas Internos
+            </div>
+            <div class="text-[11px] text-[#71717A] mt-0.5">
+              Ventas, pipeline y control
+            </div>
           </a>
-          <a 
-            href="/servicios/ecommerce" 
-            class="p-3.5 rounded-lg bg-[#101114] border border-[#23242A] hover:border-[#FF1E38]/50 transition-colors group/item"
+          <a
+            href="/servicios/ecommerce"
+            class="p-3.5 rounded-lg bg-[#101114] border border-[#23242A] hover:border-[#7368CF]/50 transition-colors group/item"
           >
-            <div class="text-xs font-bold text-[#FFFFFF] group-hover/item:text-[#FF1E38] transition-colors">E-commerce de Alto Tráfico</div>
-            <div class="text-[11px] text-[#71717A] mt-0.5">Niubiz, Yape, Plin y SUNAT</div>
+            <div
+              class="text-xs font-bold text-[#FFFFFF] group-hover/item:text-[#7368CF] transition-colors"
+            >
+              E-commerce de Alto Tráfico
+            </div>
+            <div class="text-[11px] text-[#71717A] mt-0.5">
+              Niubiz, Yape, Plin y SUNAT
+            </div>
           </a>
-          <a 
-            href="/servicios/landings" 
-            class="p-3.5 rounded-lg bg-[#101114] border border-[#23242A] hover:border-[#FF1E38]/50 transition-colors group/item"
+          <a
+            href="/servicios/landings"
+            class="p-3.5 rounded-lg bg-[#101114] border border-[#23242A] hover:border-[#7368CF]/50 transition-colors group/item"
           >
-            <div class="text-xs font-bold text-[#FFFFFF] group-hover/item:text-[#FF1E38] transition-colors">Landings de Conversión</div>
-            <div class="text-[11px] text-[#71717A] mt-0.5">Carga &lt;0.8s para pauta</div>
+            <div
+              class="text-xs font-bold text-[#FFFFFF] group-hover/item:text-[#7368CF] transition-colors"
+            >
+              Landings de Conversión
+            </div>
+            <div class="text-[11px] text-[#71717A] mt-0.5">
+              Carga &lt;0.8s para pauta
+            </div>
           </a>
-          <a 
-            href="/servicios/software-medida" 
-            class="p-3.5 rounded-lg bg-[#101114] border border-[#23242A] hover:border-[#FF1E38]/50 transition-colors group/item"
+          <a
+            href="/servicios/software-medida"
+            class="p-3.5 rounded-lg bg-[#101114] border border-[#23242A] hover:border-[#7368CF]/50 transition-colors group/item"
           >
-            <div class="text-xs font-bold text-[#FFFFFF] group-hover/item:text-[#FF1E38] transition-colors">Software & Cloud AWS</div>
-            <div class="text-[11px] text-[#71717A] mt-0.5">APIs REST y PostgreSQL</div>
+            <div
+              class="text-xs font-bold text-[#FFFFFF] group-hover/item:text-[#7368CF] transition-colors"
+            >
+              Software & Cloud AWS
+            </div>
+            <div class="text-[11px] text-[#71717A] mt-0.5">
+              APIs REST y PostgreSQL
+            </div>
           </a>
           <div class="sm:col-span-2 pt-1 text-right">
-            <a href="/servicios" class="text-xs font-semibold text-[#FF1E38] hover:underline inline-flex items-center gap-1">
+            <a
+              href="/servicios"
+              class="text-xs font-semibold text-[#7368CF] hover:underline inline-flex items-center gap-1"
+            >
               <span>Ver Catálogo Completo de Servicios</span>
               <ArrowRight class="w-3 h-3" />
             </a>
@@ -219,57 +302,72 @@ const navLinks = [
         </div>
       </details>
 
-      <a 
-        href="/por-que-full-code" 
-        class="flex items-center justify-between py-2.5 border-b border-[#1A1B20] text-2xl sm:text-3xl font-display text-[#FFFFFF] hover:text-[#FF1E38] transition-colors group"
+      <a
+        href="/por-que-full-code"
+        class="flex items-center justify-between py-2.5 border-b border-[#1A1B20] text-2xl sm:text-3xl font-display text-[#FFFFFF] hover:text-[#7368CF] transition-colors group"
       >
         <span class="flex items-center gap-3">
-          <span class="text-xs font-sans text-[#71717A] group-hover:text-[#FF1E38]">03</span>
+          <span
+            class="text-xs font-sans text-[#71717A] group-hover:text-[#7368CF]"
+            >03</span
+          >
           POR QUÉ FULL CODE
         </span>
-        <ArrowRight class="w-5 h-5 text-[#71717A] group-hover:text-[#FF1E38] group-hover:translate-x-1 transition-all" />
+        <ArrowRight
+          class="w-5 h-5 text-[#71717A] group-hover:text-[#7368CF] group-hover:translate-x-1 transition-all"
+        />
       </a>
 
-      <a 
-        href="/nosotros" 
-        class="flex items-center justify-between py-2.5 border-b border-[#1A1B20] text-2xl sm:text-3xl font-display text-[#FFFFFF] hover:text-[#FF1E38] transition-colors group"
+      <a
+        href="/nosotros"
+        class="flex items-center justify-between py-2.5 border-b border-[#1A1B20] text-2xl sm:text-3xl font-display text-[#FFFFFF] hover:text-[#7368CF] transition-colors group"
       >
         <span class="flex items-center gap-3">
-          <span class="text-xs font-sans text-[#71717A] group-hover:text-[#FF1E38]">04</span>
+          <span
+            class="text-xs font-sans text-[#71717A] group-hover:text-[#7368CF]"
+            >04</span
+          >
           NOSOTROS & EQUIPO
         </span>
-        <ArrowRight class="w-5 h-5 text-[#71717A] group-hover:text-[#FF1E38] group-hover:translate-x-1 transition-all" />
+        <ArrowRight
+          class="w-5 h-5 text-[#71717A] group-hover:text-[#7368CF] group-hover:translate-x-1 transition-all"
+        />
       </a>
 
-      <a 
-        href="/contacto" 
-        class="flex items-center justify-between py-2.5 border-b border-[#1A1B20] text-2xl sm:text-3xl font-display text-[#FFFFFF] hover:text-[#FF1E38] transition-colors group"
+      <a
+        href="/contacto"
+        class="flex items-center justify-between py-2.5 border-b border-[#1A1B20] text-2xl sm:text-3xl font-display text-[#FFFFFF] hover:text-[#7368CF] transition-colors group"
       >
         <span class="flex items-center gap-3">
-          <span class="text-xs font-sans text-[#71717A] group-hover:text-[#FF1E38]">05</span>
+          <span
+            class="text-xs font-sans text-[#71717A] group-hover:text-[#7368CF]"
+            >05</span
+          >
           CONTACTO DIRECTO
         </span>
-        <ArrowRight class="w-5 h-5 text-[#71717A] group-hover:text-[#FF1E38] group-hover:translate-x-1 transition-all" />
+        <ArrowRight
+          class="w-5 h-5 text-[#71717A] group-hover:text-[#7368CF] group-hover:translate-x-1 transition-all"
+        />
       </a>
     </nav>
 
     <!-- Action Buttons in Mobile Drawer -->
     <div class="space-y-3 pt-2">
-      <Button 
-        variant="primary" 
-        size="lg" 
-        href="/contacto" 
+      <Button
+        variant="primary"
+        size="lg"
+        href="/contacto"
         class="w-full justify-center"
       >
         <span>Cotizar Proyecto a Medida</span>
         <ArrowRight class="w-4 h-4" />
       </Button>
-      <Button 
-        variant="whatsapp" 
-        size="lg" 
-        href="https://wa.me/51999999999?text=Hola%20Vizcatch,%20quiero%20cotizar%20un%20proyecto%20de%20software" 
-        target="_blank" 
-        rel="noopener noreferrer" 
+      <Button
+        variant="whatsapp"
+        size="lg"
+        href="https://wa.me/51965100861?text=Hola%20Vizcatch,%20quiero%20cotizar%20un%20proyecto%20de%20software"
+        target="_blank"
+        rel="noopener noreferrer"
         class="w-full justify-center"
       >
         <WhatsApp class="w-4 h-4" />
@@ -278,39 +376,43 @@ const navLinks = [
     </div>
 
     <!-- Quick Contact Info Footer -->
-    <div class="pt-4 border-t border-[#23242A] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#71717A]">
-      <div>Lima, Perú • Atención Nacional</div>
-      <a href="mailto:contacto@vizcatch.com" class="text-[#A1A1AA] hover:text-[#FFFFFF]">contacto@vizcatch.com</a>
+    <div
+      class="pt-4 border-t border-[#23242A] flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#71717A]"
+    >
+      <div>Puno, Perú • Atención Nacional</div>
+      <a
+        href="mailto:noe.u.machaca@gmail.com"
+        class="text-[#A1A1AA] hover:text-[#FFFFFF]">noe.u.machaca@gmail.com</a
+      >
     </div>
-
   </div>
 </div>
 
 <script>
-  const openBtn = document.getElementById('mobile-menu-open-btn');
-  const closeBtn = document.getElementById('mobile-menu-close-btn');
-  const menu = document.getElementById('mobile-menu');
+  const openBtn = document.getElementById("mobile-menu-open-btn");
+  const closeBtn = document.getElementById("mobile-menu-close-btn");
+  const menu = document.getElementById("mobile-menu");
 
   if (openBtn && closeBtn && menu) {
     const openMenu = () => {
-      menu.classList.remove('hidden');
-      menu.classList.add('flex');
-      document.body.style.overflow = 'hidden';
+      menu.classList.remove("hidden");
+      menu.classList.add("flex");
+      document.body.style.overflow = "hidden";
     };
 
     const closeMenu = () => {
-      menu.classList.add('hidden');
-      menu.classList.remove('flex');
-      document.body.style.overflow = '';
+      menu.classList.add("hidden");
+      menu.classList.remove("flex");
+      document.body.style.overflow = "";
     };
 
-    openBtn.addEventListener('click', openMenu);
-    closeBtn.addEventListener('click', closeMenu);
+    openBtn.addEventListener("click", openMenu);
+    closeBtn.addEventListener("click", closeMenu);
 
     // Close menu when clicking on any link inside the mobile drawer
-    const links = menu.querySelectorAll('a');
+    const links = menu.querySelectorAll("a");
     links.forEach((link) => {
-      link.addEventListener('click', closeMenu);
+      link.addEventListener("click", closeMenu);
     });
   }
 </script>

@@ -18,19 +18,19 @@ const pillars = [
   {
     icon: PeruFlag,
     title: 'Ecosistema Perú Integrado de Fábrica',
-    desc: 'Integración nativa vía API directa con pasarelas de pago peruanas (Niubiz, Culqi, QR Yape y Plin) y emisión electrónica de comprobantes SUNAT (boletas y facturas XML/PDF) sin intermediarios lentos.',
+    desc: 'Integración nativa vía API directa con pasarelas de pago peruanas (Niubiz, Culqi, QR Yape y Plin) y emisión electrónica de comprobantes SUNAT (boletas y facturas XML/PDF) integrada a tu flujo de venta.',
     stats: [
-      { label: 'Facturación Electrónica', val: 'SUNAT XML Directo' },
+      { label: 'Facturación Electrónica', val: 'SUNAT Integrada' },
       { label: 'Pasarelas Locales', val: 'Niubiz • Culqi • Yape' }
     ]
   },
   {
     icon: Zap,
     title: 'Arquitectura Cloud Escalable y Eficiente',
-    desc: 'Construimos con código compilado y bases de datos relacionales indexadas (PostgreSQL). Tu plataforma soporta picos masivos de CyberDays en infraestructura económica ($10 a $20/mes en AWS o Cloudflare).',
+    desc: 'Construimos con código compilado y bases de datos relacionales indexadas (PostgreSQL). Tu plataforma soporta picos de tráfico en infraestructura económica ($10 a $20/mes en AWS o Cloudflare).',
     stats: [
       { label: 'Tiempo de Carga 4G', val: '< 0.8s Instantáneo' },
-      { label: 'Garantía de Uptime', val: '99.9% Disponibilidad' }
+      { label: 'Infraestructura', val: 'Alta Disponibilidad' }
     ]
   }
 ];
@@ -50,7 +50,7 @@ const pillars = [
         {pillars.map((p) => (
           <div class="p-8 rounded-lg bg-[#101114] border border-[#23242A] flex flex-col justify-between space-y-6 hover:border-[#3F3F46] transition-colors">
             <div class="space-y-4">
-              <div class="w-10 h-10 rounded-md bg-[#18191F] border border-[#27272A] flex items-center justify-center text-[#FF1E38]">
+              <div class="w-10 h-10 rounded-md bg-[#18191F] border border-[#27272A] flex items-center justify-center text-[#7368CF]">
                 <p.icon class="w-5 h-5" />
               </div>
 

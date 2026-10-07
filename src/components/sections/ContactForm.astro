@@ -1,28 +1,34 @@
 ---
-import Container from '../common/Container.astro';
-import SectionHeading from '../common/SectionHeading.astro';
-import Button from '../common/Button.astro';
-import WhatsApp from '../icons/WhatsApp.astro';
-import Mail from '../icons/Mail.astro';
-import MapPin from '../icons/MapPin.astro';
-import Clock from '../icons/Clock.astro';
+import Container from "../common/Container.astro";
+import SectionHeading from "../common/SectionHeading.astro";
+import Button from "../common/Button.astro";
+import WhatsApp from "../icons/WhatsApp.astro";
+import Mail from "../icons/Mail.astro";
+import MapPin from "../icons/MapPin.astro";
+import Clock from "../icons/Clock.astro";
 ---
 
-<section id="contacto" class="py-24 lg:py-32 bg-[#080808] border-b border-[#23242A]">
+<section
+  id="contacto"
+  class="py-24 lg:py-32 bg-[#080808] border-b border-[#23242A]"
+>
   <Container>
     <div class="max-w-5xl mx-auto space-y-16">
-      <SectionHeading 
+      <SectionHeading
         tag="CONTACTO DIRECTO"
-        title="ESTRUCTURÁ TU PROYECTO CON INGENIEROS"
-        subtitle="Conversá directamente con un arquitecto de software en Lima para definir el alcance técnico, la infraestructura y el presupuesto de tu sistema."
+        title="ESTRUCTURA TU PROYECTO CON INGENIEROS"
+        subtitle="Conversa directamente con un arquitecto de software en Puno para definir el alcance técnico, la infraestructura y el presupuesto de tu sistema."
       />
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-        
         <!-- Left: Direct Channels & Company Info (Col 1 to 5) -->
         <div class="lg:col-span-5 space-y-6">
-          <div class="p-8 rounded-lg bg-[#101114] border border-[#23242A] space-y-6">
-            <h3 class="text-base font-bold uppercase tracking-wider text-[#FFFFFF] pb-4 border-b border-[#23242A]">
+          <div
+            class="p-8 rounded-lg bg-[#101114] border border-[#23242A] space-y-6"
+          >
+            <h3
+              class="text-base font-bold uppercase tracking-wider text-[#FFFFFF] pb-4 border-b border-[#23242A]"
+            >
               Canales Directos en Perú
             </h3>
 
@@ -30,20 +36,34 @@ import Clock from '../icons/Clock.astro';
               <div class="flex items-start gap-3">
                 <WhatsApp class="w-4 h-4 text-[#22C55E] shrink-0 mt-0.5" />
                 <div>
-                  <div class="font-bold text-[#FFFFFF]">WhatsApp Inmediato:</div>
-                  <a href="https://wa.me/51999999999?text=Hola%20Vizcatch,%20quiero%20conversar%20sobre%20un%20proyecto%20de%20software" target="_blank" rel="noopener noreferrer" class="text-[#FF1E38] hover:underline font-medium">
-                    +51 999 999 999
+                  <div class="font-bold text-[#FFFFFF]">
+                    WhatsApp Inmediato:
+                  </div>
+                  <a
+                    href="https://wa.me/51965100861?text=Hola%20Vizcatch,%20quiero%20conversar%20sobre%20un%20proyecto%20de%20software"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-[#7368CF] hover:underline font-medium"
+                  >
+                    +51 965 100 861
                   </a>
-                  <div class="text-[11px] text-[#22C55E] mt-0.5 font-medium">Respuesta técnica en menos de 15 minutos</div>
+                  <div class="text-[11px] text-[#22C55E] mt-0.5 font-medium">
+                    Respuesta técnica el mismo día hábil
+                  </div>
                 </div>
               </div>
 
               <div class="flex items-start gap-3">
                 <Mail class="w-4 h-4 text-[#A1A1AA] shrink-0 mt-0.5" />
                 <div>
-                  <div class="font-bold text-[#FFFFFF]">Correo Corporativo:</div>
-                  <a href="mailto:contacto@vizcatch.com" class="text-[#A1A1AA] hover:text-[#FFFFFF]">
-                    contacto@vizcatch.com
+                  <div class="font-bold text-[#FFFFFF]">
+                    Correo:
+                  </div>
+                  <a
+                    href="mailto:noe.u.machaca@gmail.com"
+                    class="text-[#A1A1AA] hover:text-[#FFFFFF]"
+                  >
+                    noe.u.machaca@gmail.com
                   </a>
                 </div>
               </div>
@@ -52,24 +72,26 @@ import Clock from '../icons/Clock.astro';
                 <MapPin class="w-4 h-4 text-[#A1A1AA] shrink-0 mt-0.5" />
                 <div>
                   <div class="font-bold text-[#FFFFFF]">Sede Principal:</div>
-                  <div>Lima, Perú (Atención nacional e internacional)</div>
+                  <div>Puno, Perú (Atención nacional e internacional)</div>
                 </div>
               </div>
 
               <div class="flex items-start gap-3">
                 <Clock class="w-4 h-4 text-[#A1A1AA] shrink-0 mt-0.5" />
                 <div>
-                  <div class="font-bold text-[#FFFFFF]">Horario de Atención:</div>
+                  <div class="font-bold text-[#FFFFFF]">
+                    Horario de Atención:
+                  </div>
                   <div>Lunes a Viernes: 8:30 a 19:00 (GMT-5)</div>
                 </div>
               </div>
             </div>
 
             <div class="pt-2">
-              <Button 
-                variant="whatsapp" 
-                size="md" 
-                href="https://wa.me/51999999999?text=Hola%20Vizcatch,%20quiero%20conversar%20sobre%20un%20proyecto%20de%20software%20para%20mi%20empresa"
+              <Button
+                variant="whatsapp"
+                size="md"
+                href="https://wa.me/51965100861?text=Hola%20Vizcatch,%20quiero%20conversar%20sobre%20un%20proyecto%20de%20software%20para%20mi%20empresa"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="w-full justify-center"
@@ -83,79 +105,117 @@ import Clock from '../icons/Clock.astro';
 
         <!-- Right: Request for Proposal (RFP) Form (Col 6 to 12) -->
         <div class="lg:col-span-7">
-          <div class="p-8 rounded-lg bg-[#101114] border border-[#23242A] space-y-6">
+          <div
+            class="p-8 rounded-lg bg-[#101114] border border-[#23242A] space-y-6"
+          >
             <div class="border-b border-[#23242A] pb-4">
-              <h3 class="text-base font-bold uppercase tracking-wider text-[#FFFFFF]">
+              <h3
+                class="text-base font-bold uppercase tracking-wider text-[#FFFFFF]"
+              >
                 Solicitud de Propuesta Técnica
               </h3>
               <p class="text-xs text-[#A1A1AA] mt-1 font-normal">
-                Completá los requerimientos para que un arquitecto prepare una propuesta técnica adaptada a tu escala.
+                Completa los requerimientos para que un arquitecto prepare una
+                propuesta técnica adaptada a tu escala.
               </p>
             </div>
 
             <form id="contact-rfp-form" class="space-y-4 text-xs">
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label class="block text-[#FFFFFF] font-semibold mb-1.5" for="name">Nombre y Apellido *</label>
-                  <input 
-                    type="text" 
-                    id="name" 
-                    required 
-                    placeholder="Ej. Carlos Mendoza" 
-                    class="w-full px-3.5 py-2.5 rounded-md border border-[#2A2B32] bg-[#18191E] text-[#FFFFFF] placeholder-[#71717A] text-sm focus:outline-none focus:ring-2 focus:ring-[#FF1E38] focus:border-[#FF1E38]"
+                  <label
+                    class="block text-[#FFFFFF] font-semibold mb-1.5"
+                    for="name">Nombre y Apellido *</label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    required
+                    placeholder="Ej. Carlos Mendoza"
+                    class="w-full px-3.5 py-2.5 rounded-md border border-[#2A2B32] bg-[#18191E] text-[#FFFFFF] placeholder-[#71717A] text-sm focus:outline-none focus:ring-2 focus:ring-[#7368CF] focus:border-[#7368CF]"
                   />
                 </div>
                 <div>
-                  <label class="block text-[#FFFFFF] font-semibold mb-1.5" for="company">Empresa / RUC (Opcional)</label>
-                  <input 
-                    type="text" 
-                    id="company" 
-                    placeholder="Ej. Importaciones SAC" 
-                    class="w-full px-3.5 py-2.5 rounded-md border border-[#2A2B32] bg-[#18191E] text-[#FFFFFF] placeholder-[#71717A] text-sm focus:outline-none focus:ring-2 focus:ring-[#FF1E38] focus:border-[#FF1E38]"
+                  <label
+                    class="block text-[#FFFFFF] font-semibold mb-1.5"
+                    for="company">Empresa / RUC (Opcional)</label
+                  >
+                  <input
+                    type="text"
+                    id="company"
+                    placeholder="Ej. Importaciones SAC"
+                    class="w-full px-3.5 py-2.5 rounded-md border border-[#2A2B32] bg-[#18191E] text-[#FFFFFF] placeholder-[#71717A] text-sm focus:outline-none focus:ring-2 focus:ring-[#7368CF] focus:border-[#7368CF]"
                   />
                 </div>
               </div>
 
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label class="block text-[#FFFFFF] font-semibold mb-1.5" for="phone">Teléfono / WhatsApp *</label>
-                  <input 
-                    type="tel" 
-                    id="phone" 
-                    required 
-                    placeholder="+51 999 999 999" 
-                    class="w-full px-3.5 py-2.5 rounded-md border border-[#2A2B32] bg-[#18191E] text-[#FFFFFF] placeholder-[#71717A] text-sm focus:outline-none focus:ring-2 focus:ring-[#FF1E38] focus:border-[#FF1E38]"
+                  <label
+                    class="block text-[#FFFFFF] font-semibold mb-1.5"
+                    for="phone">Teléfono / WhatsApp *</label
+                  >
+                  <input
+                    type="tel"
+                    id="phone"
+                    required
+                    placeholder="+51 9XX XXX XXX"
+                    class="w-full px-3.5 py-2.5 rounded-md border border-[#2A2B32] bg-[#18191E] text-[#FFFFFF] placeholder-[#71717A] text-sm focus:outline-none focus:ring-2 focus:ring-[#7368CF] focus:border-[#7368CF]"
                   />
                 </div>
                 <div>
-                  <label class="block text-[#FFFFFF] font-semibold mb-1.5" for="service">Tipo de Proyecto *</label>
-                  <select 
-                    id="service" 
-                    class="w-full px-3.5 py-2.5 rounded-md border border-[#2A2B32] bg-[#18191E] text-[#FFFFFF] text-sm focus:outline-none focus:ring-2 focus:ring-[#FF1E38] focus:border-[#FF1E38]"
+                  <label
+                    class="block text-[#FFFFFF] font-semibold mb-1.5"
+                    for="service">Tipo de Proyecto *</label
                   >
-                    <option value="CRM o Sistema Interno a Medida" class="bg-[#18191E] text-[#FFFFFF]">CRM o Sistema Interno</option>
-                    <option value="E-commerce Full Code con Pasarelas Perú" class="bg-[#18191E] text-[#FFFFFF]">E-commerce a Medida</option>
-                    <option value="Landing Page de Alta Conversión" class="bg-[#18191E] text-[#FFFFFF]">Landing Page de Alta Conversión</option>
-                    <option value="Software Cloud / APIs & Integraciones" class="bg-[#18191E] text-[#FFFFFF]">Software Cloud / APIs</option>
+                  <select
+                    id="service"
+                    class="w-full px-3.5 py-2.5 rounded-md border border-[#2A2B32] bg-[#18191E] text-[#FFFFFF] text-sm focus:outline-none focus:ring-2 focus:ring-[#7368CF] focus:border-[#7368CF]"
+                  >
+                    <option
+                      value="CRM o Sistema Interno a Medida"
+                      class="bg-[#18191E] text-[#FFFFFF]"
+                      >CRM o Sistema Interno</option
+                    >
+                    <option
+                      value="E-commerce Full Code con Pasarelas Perú"
+                      class="bg-[#18191E] text-[#FFFFFF]"
+                      >E-commerce a Medida</option
+                    >
+                    <option
+                      value="Landing Page de Alta Conversión"
+                      class="bg-[#18191E] text-[#FFFFFF]"
+                      >Landing Page de Alta Conversión</option
+                    >
+                    <option
+                      value="Software Cloud / APIs & Integraciones"
+                      class="bg-[#18191E] text-[#FFFFFF]"
+                      >Software Cloud / APIs</option
+                    >
                   </select>
                 </div>
               </div>
 
               <div>
-                <label class="block text-[#FFFFFF] font-semibold mb-1.5" for="details">Detalle o requerimiento del proyecto *</label>
-                <textarea 
-                  id="details" 
-                  rows="3" 
-                  required 
-                  placeholder="Describí brevemente los requerimientos principales (facturación SUNAT, pasarelas Niubiz/Culqi, flujos de WhatsApp, catálogo, etc.)."
-                  class="w-full px-3.5 py-2.5 rounded-md border border-[#2A2B32] bg-[#18191E] text-[#FFFFFF] placeholder-[#71717A] text-sm focus:outline-none focus:ring-2 focus:ring-[#FF1E38] focus:border-[#FF1E38]"
+                <label
+                  class="block text-[#FFFFFF] font-semibold mb-1.5"
+                  for="details">Detalle o requerimiento del proyecto *</label
+                >
+                <textarea
+                  id="details"
+                  rows="3"
+                  required
+                  placeholder="Describe brevemente los requerimientos principales (facturación SUNAT, pasarelas Niubiz/Culqi, flujos de WhatsApp, catálogo, etc.)."
+                  class="w-full px-3.5 py-2.5 rounded-md border border-[#2A2B32] bg-[#18191E] text-[#FFFFFF] placeholder-[#71717A] text-sm focus:outline-none focus:ring-2 focus:ring-[#7368CF] focus:border-[#7368CF]"
                 ></textarea>
               </div>
 
-              <div class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <Button 
-                  variant="primary" 
-                  size="md" 
+              <div
+                class="pt-2 flex flex-col sm:flex-row items-center justify-between gap-4"
+              >
+                <Button
+                  variant="primary"
+                  size="md"
                   type="submit"
                   class="w-full sm:w-auto"
                 >
@@ -174,22 +234,27 @@ import Clock from '../icons/Clock.astro';
 </section>
 
 <script>
-  const form = document.getElementById('contact-rfp-form') as HTMLFormElement;
+  const form = document.getElementById("contact-rfp-form") as HTMLFormElement;
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener("submit", (e) => {
       e.preventDefault();
-      const name = (document.getElementById('name') as HTMLInputElement).value;
-      const company = (document.getElementById('company') as HTMLInputElement).value;
-      const phone = (document.getElementById('phone') as HTMLInputElement).value;
-      const service = (document.getElementById('service') as HTMLSelectElement).value;
-      const details = (document.getElementById('details') as HTMLTextAreaElement).value;
+      const name = (document.getElementById("name") as HTMLInputElement).value;
+      const company = (document.getElementById("company") as HTMLInputElement)
+        .value;
+      const phone = (document.getElementById("phone") as HTMLInputElement)
+        .value;
+      const service = (document.getElementById("service") as HTMLSelectElement)
+        .value;
+      const details = (
+        document.getElementById("details") as HTMLTextAreaElement
+      ).value;
 
       let msg = `Hola Vizcatch! Mi nombre es *${name}*`;
       if (company) msg += ` de la empresa *${company}*`;
       msg += `.\n\nEstoy interesado en una propuesta para: *${service}*.\n\n*Detalles del proyecto:*\n${details}\n\n*Mi teléfono de contacto:* ${phone}`;
 
-      const whatsappUrl = `https://wa.me/51999999999?text=${encodeURIComponent(msg)}`;
-      window.open(whatsappUrl, '_blank');
+      const whatsappUrl = `https://wa.me/51965100861?text=${encodeURIComponent(msg)}`;
+      window.open(whatsappUrl, "_blank");
     });
   }
 </script>

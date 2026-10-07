@@ -1,7 +1,7 @@
 ---
-import '../styles/global.css';
-import Navbar from '../components/navigation/Navbar.astro';
-import Footer from '../components/navigation/Footer.astro';
+import "../styles/global.css";
+import Navbar from "../components/navigation/Navbar.astro";
+import Footer from "../components/navigation/Footer.astro";
 
 interface Props {
   title?: string;
@@ -11,13 +11,16 @@ interface Props {
 }
 
 const {
-  title = "Vizcatch — Ingeniería de Software a Medida | Perú",
-  description = "Firma de ingeniería de software en Perú. Construimos CRMs, E-commerce de alto tráfico y plataformas a medida con arquitectura full code, cero dependencias de plantillas y 100% propiedad del cliente.",
+  title = "Vizcatch Analytics — Ingeniería de Software a Medida | Puno, Perú",
+  description = "Firma de ingeniería de software en Puno, Perú. Construimos CRMs, E-commerce de alto tráfico y plataformas a medida con arquitectura full code, cero dependencias de plantillas y 100% propiedad del cliente.",
   image = "/og-image.png",
-  canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://vizcatch.com").href,
+  canonicalURL = new URL(
+    Astro.url.pathname,
+    Astro.site || "https://vizcatchanalytics.com",
+  ).href,
 } = Astro.props;
 
-const siteUrl = "https://vizcatch.com";
+const siteUrl = "https://vizcatchanalytics.com";
 
 const schemaOrg = {
   "@context": "https://schema.org",
@@ -25,31 +28,32 @@ const schemaOrg = {
     {
       "@type": "Organization",
       "@id": `${siteUrl}/#organization`,
-      "name": "Vizcatch",
-      "url": siteUrl,
-      "logo": `${siteUrl}/logo.png`,
-      "description": "Firma de ingeniería de software a medida en Perú. Especialistas en CRMs, E-commerce de alto tráfico, Landings de conversión y desarrollo Full Code.",
-      "address": {
+      name: "Vizcatch Analytics",
+      url: siteUrl,
+      logo: `${siteUrl}/isotipo.png`,
+      description:
+        "Firma de ingeniería de software a medida en Puno, Perú. Especialistas en CRMs, E-commerce de alto tráfico, Landings de conversión y desarrollo Full Code.",
+      address: {
         "@type": "PostalAddress",
-        "addressLocality": "Lima",
-        "addressCountry": "PE"
+        addressLocality: "Puno",
+        addressCountry: "PE",
       },
-      "contactPoint": {
+      contactPoint: {
         "@type": "ContactPoint",
-        "telephone": "+51-999-999-999",
-        "contactType": "sales",
-        "areaServed": "PE",
-        "availableLanguage": ["Spanish", "English"]
-      }
+        telephone: "+51-965-100-861",
+        contactType: "sales",
+        areaServed: "PE",
+        availableLanguage: ["Spanish", "English"],
+      },
     },
     {
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
-      "url": siteUrl,
-      "name": "Vizcatch",
-      "publisher": { "@id": `${siteUrl}/#organization` }
-    }
-  ]
+      url: siteUrl,
+      name: "Vizcatch Analytics",
+      publisher: { "@id": `${siteUrl}/#organization` },
+    },
+  ],
 };
 ---
 
@@ -58,7 +62,7 @@ const schemaOrg = {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <meta name="generator" content={Astro.generator} />
 
     <!-- Primary Meta Tags -->
@@ -83,14 +87,23 @@ const schemaOrg = {
     <meta property="twitter:image" content={image} />
 
     <!-- Typography: Bebas Neue + Syne + Plus Jakarta Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Syne:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- Structured Data JSON-LD -->
-    <script is:inline type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
+    <script
+      is:inline
+      type="application/ld+json"
+      set:html={JSON.stringify(schemaOrg)}
+    />
   </head>
-  <body class="min-h-screen flex flex-col bg-[#080808] text-[#FFFFFF] antialiased selection:bg-[#FF1E38] selection:text-[#FFFFFF]">
+  <body
+    class="min-h-screen flex flex-col bg-[#080808] text-[#FFFFFF] antialiased selection:bg-[#7368CF] selection:text-[#FFFFFF]"
+  >
     <Navbar />
     <main class="flex-1">
       <slot />
@@ -99,12 +112,12 @@ const schemaOrg = {
 
     <!-- Client Scripts for Lenis Smooth Scroll and Direct Tactile States -->
     <script>
-      import Lenis from 'lenis';
+      import Lenis from "lenis";
 
       const lenis = new Lenis({
         duration: 0.9,
         easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        orientation: 'vertical',
+        orientation: "vertical",
         smoothWheel: true,
       });
 
